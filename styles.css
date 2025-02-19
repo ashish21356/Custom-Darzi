@@ -1,0 +1,167 @@
+ /*** Stats Section CSS ***/
+ .stats-section {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 8%; /* Margin from top */
+    display: flex;
+    justify-content: space-around; /* Add space between items */
+    align-items: center; /* Vertically align the items */
+    background-color: #f7f7f7; /* Optional: Light background for the section */
+}
+
+.stat-item {
+    display: inline-block;
+    margin: 0 15px; /* Add space between items */
+    font-size: 16px; /* Increased font size */
+    position: relative;
+    padding-right: 15px; /* Space for the vertical line */
+}
+
+.stat-item:not(:last-child) {
+    border-right: 2px solid #ccc; /* Vertical line between items */
+}
+
+.stat-number {
+    font-size: 72px;
+    font-weight: bold; /* Ensure number is bold */
+    color: #333;
+    margin-bottom: 10px; /* Margin for space below the number */
+}
+
+.stat-item p {
+    font-size: 18px; /* Increased font size for better readability */
+    font-weight: bold; /* Make the text bold */
+    color: #555;
+    margin-top: 10px; /* Margin from top */
+}
+
+ /*** end Stats Section CSS ***/
+
+
+ @keyframes scroll-right {
+    from { transform: translateX(150%); }  /* Start from Right */
+    to { transform: translateX(-100%); }   /* Move to Left */
+}
+
+.animate-scroll {
+    display: flex;
+    animation: scroll-right 55s linear infinite;
+}
+
+/* Stops animation on hover */
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Review Card Styling */
+.review-card {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.1);
+}
+
+
+/*movable card offer css start*/
+
+
+@keyframes scroll {
+    from {
+      transform: translateX(200);
+    }
+    to {
+      transform: translateX(calc(-100% - 1rem)); /* Fixes spacing issue */
+    }
+  }
+
+  .animate-scroll {
+    display: flex;
+    animation: scroll 12s linear infinite; /* Adjusted speed for smoother effect */
+  }
+
+  .restra-card {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 16px;
+    height: 20rem;
+    width: 16rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-out;
+  }
+
+  .restra-card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 1px;
+  }
+
+  .card-content {
+    margin-top: 12px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/*movable card offer css end*/
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+  }
+  .carousel-item {
+    min-width: 100%;
+    height: 50vh; /* 50% of screen height */
+    position: relative;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .carousel-button {
+    padding: 0.75rem; /* Adjusted padding for better size */
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 255, 255, 0.5);
+  }
+  .dot {
+    width: 1rem; /* Adjusted size of the dots */
+    height: 1rem; /* Matching the button size */
+    border-radius: 9999px;
+    background-color: rgba(169, 169, 169, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .dot.active {
+    background-color: black;
+  }
