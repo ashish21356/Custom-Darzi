@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Product Catalog Section */
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 30px 10px;
+        }
+
+        /* Product Card */
+        .product {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .desc {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .product .price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #e74c3c;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-icon:hover {
+            background-color: #c0392b;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #fff;
+            color: #e74c3c;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* width: 100%; */
+            height: 101%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            width: 70%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .modal h3 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: #e74c3c;
+            cursor: pointer;
+        }
+
+        .modal .close:hover {
+            color: #c0392b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .catalog {
+                /* grid-template-columns: 1fr 1fr; */
+            }
+
+            .product {
+                margin-bottom: 15px;
+            }
+
+            .modal-content {
+                overflow-y: scroll;
+                max-height: 75%;
+            }
+        }
+    </style>
+</head>
+<script>
+    addEventListener("DOMContentLoaded", () => {
+        const catalogElem = document.querySelector("#catalog");
+        fetch('https://fakestoreapi.com/products?limit=5')
+            .then(res => res.json())
+            .then(products => {
+                products
+                products.forEach(product => {
+                    const imgTag = document.createElement('img');
+                    const titleTag = document.createElement('h5');
+                    const descTag = document.createElement('p');
+                    const priceTag = document.createElement('p');
+                    const productInfoTag = document.createElement('div');
+                    const rootElem = document.createElement('div');
+
+                    rootElem.appendChild(imgTag);
+                    rootElem.appendChild(productInfoTag);
+
+                    productInfoTag.appendChild(titleTag);
+                    productInfoTag.appendChild(descTag);
+                    productInfoTag.appendChild(priceTag);
+
+                    // Image tag element
+                    imgTag.src = product.image;
+                    imgTag.alt = product.title;
+
+                    // Root element handling
+                    rootElem.classList.add('product');
+                    rootElem.onclick = () => showModal(product.title, product.description, "₹" + product.price, product.image);
+
+                    // productInfoTag handling
+                    productInfoTag.classList.add('product-info');
+
+                    // Title Tag handling
+                    titleTag.innerHTML = product.title;
+
+                    // desc tag handling
+                    descTag.classList.add('desc')
+                    descTag.innerHTML = product.description;
+
+                    // Price tag handling
+                    priceTag.innerHTML = '₹' + product.price;
+
+                    catalogElem.appendChild(rootElem);
+
+                })
+            })
+    })
+</script>
+
+<body>
+
+    <div class="header" onclick="closeModal()">
+        <h1>Clothing Catalog</h1>
+    </div>
+
+    <div class="catalog" id="catalog">
+    </div>
+
+    <div class="cart-icon" onclick="viewCart()">
+        <span>🛒</span>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content flex">
+            <span class="close" onclick="closeModal()">×</span>
+            <div>
+                <img id="modal-img" src="" alt="Product Image">
+            </div>
+            <div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <p id="modal-price"></p>
+                <button class="add-to-cart" onclick="addToCartModal()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let selectedProduct = null;
+
+        function showModal(name, description, price, image) {
+            selectedProduct = { name, description, price, image };
+            document.getElementById('modal-img').src = image;
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function addToCart(name, price, image) {
+            const product = { name, price, image };
+            cart.push(product);
+            updateCartBadge();
+        }
+
+        function addToCartModal() {
+            if (selectedProduct) {
+                cart.push(selectedProduct);
+                updateCartBadge();
+                closeModal();
+            }
+        }
+
+        function viewCart() {
+            let cartDetails = "New Order Received:\n\n";
+            let total = 0;
+
+            cart.forEach((product, index) => {
+                cartDetails += `${index + 1}. ${product.name} - ${product.price}\n`;
+                total += parseInt(product.price.replace('₹', '').replace(',', ''));
+            });
+            cartDetails += `\nTotal: ₹${total.toLocaleString()}`;
+
+            let phoneNumber = "+917047626500";
+            let message = encodeURIComponent(cartDetails);
+            let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            // Open WhatsApp with the cart details
+            window.open(whatsappURL, "_blank");
+            alert(cartDetails);
+        }
+
+        function updateCartBadge() {
+            document.getElementById('cart-badge').innerText = cart.length;
+        }
+    </script>
+
+</body>
+
+</html>
