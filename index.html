@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -355,4 +356,102 @@
 
 </body>
 
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ShopEasy</div>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products" id="products">
+            <!-- Products will be dynamically added here -->
+        </section>
+
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-footer">
+                <div class="total">
+                    Total: $<span id="cart-total">0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">ShopEasy</div>
+            <div class="social-icons">
+                <a href="https://www.youtube.com" target="_blank">📺</a>
+                <a href="https://www.instagram.com" target="_blank">📷</a>
+                <a href="https://www.facebook.com" target="_blank">📘</a>
+            </div>
+            <div class="contact-details">
+                <p>📞 +123-456-7890</p>
+                <p>📧 support@shopeasy.com</p>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    
+        .contact-details p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Fix */
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .footer .social-icons a {
+        font-size: 1.2rem;
+    }}
+    </style>
+    
+    <script src="script.js"></script>
+</body>
+>>>>>>> f6f145f (Initial commit)
 </html>
