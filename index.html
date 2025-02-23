@@ -15,11 +15,27 @@
             </div>
         </nav>
     </header>
-
+    
     <main>
         <section class="products" id="products">
             <!-- Products will be dynamically added here -->
         </section>
+
+        <div class="product-sidebar" id="product-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button onclick="toggleProductDetail()">✕</button>
+            </div>
+            <div id="product-details">
+                <!-- Cart items will be added here -->
+            </div>
+            <!-- <div class="cart-footer">
+                <div class="total">
+                    Total: $<span id="cart-total">0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div> -->
+        </div>
 
         <div class="cart-sidebar" id="cart-sidebar">
             <div class="cart-header">
@@ -93,7 +109,6 @@
         font-size: 1.2rem;
     }}
     </style>
-    
     <script src="script.js"></script>
 </body>
 </html>
