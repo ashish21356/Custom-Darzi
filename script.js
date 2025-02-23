@@ -139,9 +139,7 @@ class Cart {
                 <div class="product-info">
                     <h3 class="product-title">${product.name}</h3>
                     <p class="product-price"> ₹${product.price.toFixed(2)}</p>
-                    <button class="add-to-cart" data-product-id=${product.id}>
-                        Add to Cart
-                    </button>
+                    
                 </div>
             </div>
         `).join('');
@@ -149,13 +147,15 @@ class Cart {
 
     // add event listeners
     addEventListener = () => {
-        document.querySelector('.products').addEventListener('click', (event) => {
+        document.querySelector('#product-sidebar').addEventListener('click', (event) => {
             if(event.target && event.target.classList.contains('add-to-cart')) {
                 const productId = event.target.getAttribute('data-product-id');
                 this.addToCart(productId);
-                // event.stopPropagation();
+                this.toggleProductDetail();
             }
+        });
 
+        document.querySelector('.products').addEventListener('click', (event) => {
             if(event.target && event.target.closest('.product-card')) {
                 
                 const productId = event.target.closest('.product-card').getAttribute('data-product-id');
@@ -269,10 +269,14 @@ class Cart {
     // Toggle cart sidebar
     toggleProductDetail = (product) => {
         const cartSidebar = document.getElementById('product-sidebar');
-        
+
         if (product) {
             // const product = this.products.filter(`${product.id}` === `${productId}`);
-            
+            const productDetailElem = document.getElementById('product-details');
+            productDetailElem.innerHTML = `<button class="add-to-cart" data-product-id=${product.id}>
+                        Add to Cart
+                    </button>`
+
             document.querySelector('#product-name').innerHTML = product.name;
             // objCart.addToCart(product.id);
         }
