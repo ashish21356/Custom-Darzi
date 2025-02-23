@@ -280,6 +280,7 @@ class Cart {
     }
 }
 
+<<<<<<< Updated upstream
 // Toggle cart sidebar
 toggleCart = () => {
     const cartSidebar = document.getElementById('cart-sidebar');
@@ -288,5 +289,20 @@ toggleCart = () => {
 }
 
 const objCart = new Cart();
+=======
+// Hero Section Heading Effect
+document.addEventListener("DOMContentLoaded", function () {
+    let heroHeading = document.getElementById("hero-heading");
+    let colors = ["#ffcc00", "#ff5733", "#33ff57", "#3399ff"];
+    let index = 0;
+
+    setInterval(() => {
+        heroHeading.style.color = colors[index];
+        index = (index + 1) % colors.length;
+    }, 1000);
+});
+
+
+>>>>>>> Stashed changes
 // Initialize the page when the DOM is loaded
 document.addEventListener('DOMContentLoaded', objCart.initializePage);
