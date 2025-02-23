@@ -142,7 +142,7 @@ class Cart {
     displayProducts = (products) => {
         const productsContainer = document.getElementById('products');
         productsContainer.innerHTML = products.map(product => `
-            <div class="product-card" onclick="toggleProductDetail()">
+            <div class="product-card" onclick="toggleProductDetail('${product.name}')">
                 <img src="${product.image}" alt="${product.name}" class="product-image">
                 <div class="product-info">
                     <h3 class="product-title">${product.name}</h3>
@@ -163,6 +163,7 @@ class Cart {
             if(event.target && event.target.classList.contains('add-to-cart')) {
                 const productId = event.target.getAttribute('data-product-id');
                 this.addToCart(productId);
+                event.stopPropagation();
                 console.log('event', event);
             }
         })
@@ -280,8 +281,11 @@ toggleCart = () => {
 }
 
 // Toggle cart sidebar
-toggleProductDetail = () => {
+toggleProductDetail = (productName) => {
+    console.log({productName});
+    
     const cartSidebar = document.getElementById('product-sidebar');
+    document.querySelector('#product-name').innerHTML = productName;
     cartSidebar.classList.toggle('open');
     // const DbConnection = new Db();
 }
