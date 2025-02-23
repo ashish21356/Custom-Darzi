@@ -19,8 +19,6 @@ class Db {
     }
 
     getStore = () => {
-        console.log('this.db ###', this.db);
-
         const transaction = this.db.transaction('cart', 'readwrite');
         const store = transaction.objectStore('cart');
 
@@ -53,8 +51,6 @@ class Db {
         return new Promise((resolve, reject) => {
             if(this.db) {
                 try {
-                    console.log('item, key ### ', item, key);
-                    
                     const store = this.getStore();
                     const req = store.put(item);
                     req.onsuccess = event => {
@@ -93,7 +89,6 @@ class Db {
                     const store = this.getStore();
                     const result = store.getAll();
                     result.onsuccess = (event) => {
-                        console.log(event.target.result);
                         resolve(event.target.result || []);
                     }
                 } catch (error) {
@@ -128,7 +123,6 @@ class Cart {
     initializePage = () => {
         this.dbInstance = new Db();
         this.loadLocalProducts().then(list => {
-            console.log({list});
             this.products = list.products;
             this.displayProducts(list.products);
             this.loadCart();
@@ -140,7 +134,7 @@ class Cart {
     displayProducts = (products) => {
         const productsContainer = document.getElementById('products');
         productsContainer.innerHTML = products.map(product => `
-            <div class="product-card" onclick="toggleProductDetail('${product.name}')">
+            <div class="product-card" data-product-id='${product.id}'>
                 <img src="${product.image}" alt="${product.name}" class="product-image">
                 <div class="product-info">
                     <h3 class="product-title">${product.name}</h3>
@@ -155,20 +149,24 @@ class Cart {
 
     // add event listeners
     addEventListener = () => {
-        console.log('I am adding Listener');
-        
         document.querySelector('.products').addEventListener('click', (event) => {
             if(event.target && event.target.classList.contains('add-to-cart')) {
                 const productId = event.target.getAttribute('data-product-id');
                 this.addToCart(productId);
                 // event.stopPropagation();
-                console.log('event', event);
+            }
+
+            if(event.target && event.target.closest('.product-card')) {
+                
+                const productId = event.target.closest('.product-card').getAttribute('data-product-id');
+                
+                const product = this.products.find(product => `${product.id}` === `${productId}`);
+                this.toggleProductDetail(product);
             }
         })
         
         document.querySelector('#cart-items').addEventListener('click', (event) => {
             if(event.target && event.target.classList.contains('quantity-btn')) {
-                console.log({event});
                 const productId = event.target.getAttribute('data-product-id');
                 const action = event.target.getAttribute('data-product-action');
                 this.updateQuantity(productId, action);
@@ -179,12 +177,10 @@ class Cart {
     // Load cart from localStorage
     loadCart = async () => {
         const savedCart = localStorage.getItem('cart');
-        console.log('before remove ###', await this.dbInstance.getItems());
 
         // await this.dbInstance.removeItem(1);
 
         const cartItems = await this.dbInstance.getItems();
-        // console.log(cartItems);
         cart = cartItems;
         this.updateCartCount();
         this.updateCartDisplay();
@@ -203,6 +199,7 @@ class Cart {
         this.updateCartDisplay();
         this.updateCartCount();
     }
+
     // Update cart count
     updateCartCount = () => {
         const count = cart.reduce((total, item) => total + item.quantity, 0);
@@ -234,7 +231,6 @@ class Cart {
     
     // Update quantity
     updateQuantity = async (productId, action = 0) => {
-        console.log('updating',  productId, action);
         const item = cart.find(item => `${item.id}` === `${productId}`);
         if(action === 'increment') {
             item.quantity += 1;
@@ -269,6 +265,19 @@ class Cart {
         const whatsappMessage = encodeURIComponent(`My Order:\n${message}\n\nTotal: $${total.toFixed(2)}`);
         window.open(`https://wa.me/?text=${whatsappMessage}`, '_blank');
     }
+
+    // Toggle cart sidebar
+    toggleProductDetail = (product) => {
+        const cartSidebar = document.getElementById('product-sidebar');
+        
+        if (product) {
+            // const product = this.products.filter(`${product.id}` === `${productId}`);
+            
+            document.querySelector('#product-name').innerHTML = product.name;
+            // objCart.addToCart(product.id);
+        }
+        cartSidebar.classList.toggle('open');
+    }
 }
 
 // Toggle cart sidebar
@@ -278,17 +287,6 @@ toggleCart = () => {
     // const DbConnection = new Db();
 }
 
-// Toggle cart sidebar
-toggleProductDetail = (productName) => {
-    console.log({productName});
-    
-    const cartSidebar = document.getElementById('product-sidebar');
-    document.querySelector('#product-name').innerHTML = productName;
-    cartSidebar.classList.toggle('open');
-    // const DbConnection = new Db();
-}
-
 const objCart = new Cart();
-
 // Initialize the page when the DOM is loaded
 document.addEventListener('DOMContentLoaded', objCart.initializePage);

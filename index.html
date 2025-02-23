@@ -21,7 +21,7 @@
         <div class="product-sidebar" id="product-sidebar">
             <div class="cart-header">
                 <h2 id="product-name"></h2>
-                <button onclick="toggleProductDetail()">✕</button>
+                <button onclick="closeProductDetail()">✕</button>
             </div>
             <div id="product-details">
                 Product Details will come here!!
@@ -57,9 +57,11 @@
             </div>
         </div>
     </footer>
-    <style>
-        
-    </style>
+    <script>
+        function closeProductDetail() {
+        document.getElementById('product-sidebar').classList.toggle('open');
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
