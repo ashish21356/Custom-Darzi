@@ -1,0 +1,27 @@
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action when there's a push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checks out the code in the repository
+
+      - name: Install FTP client
+        run: sudo apt-get install -y lftp  # Installs lftp for FTP transfer
+
+      - name: Deploy to InfinityFree
+        run: |
+          lftp -e "mirror -R ./ /htdocs; quit" -u if0_38377025,Worldstar@123 ftpupload.net
+        env:
+          FTP_USERNAME: if0_38377025
+          FTP_PASSWORD: Worldstar@123
+          FTP_HOST: ftpupload.net
+          FTP_REMOTE_DIR: /htdocs
+
