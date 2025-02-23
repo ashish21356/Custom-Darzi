@@ -318,3 +318,44 @@ footer {
         font-size: 20px;
     }
 }
+
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 600px) {
+.footer {
+padding: 1rem;
+font-size: 0.9rem;
+}
+
+.footer .social-icons a {
+font-size: 1.2rem;
+}}

@@ -10,8 +10,6 @@ class Db {
         // this.db = this.request.result || null;
 
         this.request.onupgradeneeded = (event) => {
-            // this.db = event.target.result;
-            this.request.result.deleteObjectStore('cart', {keyPath: 'id'});
             this.request.result.createObjectStore('cart', {keyPath: 'id'}).createIndex('cartId', 'id');
         };
 
@@ -163,7 +161,7 @@ class Cart {
             if(event.target && event.target.classList.contains('add-to-cart')) {
                 const productId = event.target.getAttribute('data-product-id');
                 this.addToCart(productId);
-                event.stopPropagation();
+                // event.stopPropagation();
                 console.log('event', event);
             }
         })
