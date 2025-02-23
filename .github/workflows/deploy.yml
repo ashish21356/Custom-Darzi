@@ -18,10 +18,10 @@ jobs:
 
       - name: Deploy to InfinityFree
         run: |
-          lftp -e "mirror -R ./ /htdocs; quit" -u if0_38377025,Worldstar@123 ftpupload.net
+          lftp -e "mirror -R ./ /htdocs; quit" -u if0_38377025,Worldstar123 ftpupload.net
         env:
           FTP_USERNAME: if0_38377025
-          FTP_PASSWORD: Worldstar@123
+          FTP_PASSWORD: Worldstar123
           FTP_HOST: ftpupload.net
           FTP_REMOTE_DIR: /htdocs
 
