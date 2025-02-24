@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple E-commerce Store</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-  
+    <link rel="stylesheet" href="offer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -18,36 +17,102 @@
             </div>
         </nav>
     </header>
-<<<<<<< Updated upstream
-=======
-  <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 id="hero-heading">Best Deals on Top Products!</h1>
-        <p>Shop the latest gadgets, accessories, and more at unbeatable prices.</p>
-        <button class="shop-now" onclick="scrollToProducts()">Shop Now</button>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="hero-heading">Best Deals on Top Products!</h1>
+            <p class="hero-subtitle">Shop the latest gadgets, accessories, and more at unbeatable prices.</p>
+            <div class="hero-buttons">
+                <button class="shop-now primary-btn" onclick="scrollToProducts()">
+                    <i class="fas fa-shopping-cart"></i> Shop Now
+                </button>
+                <button class="learn-more secondary-btn" onclick="scrollToServices()">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+    <!-- Offer Section -->
+    
+    <section class="offer-section" id="offers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Special Offers</h2>
+                <p>Limited time deals you can't resist!</p>
+            </div>
+            <div class="offer-grid">
+                <div class="offer-card flash-sale">
+                    <div class="offer-badge">
+                        <i class="fas fa-bolt"></i> Flash Sale
+                    </div>
+                    <div class="offer-timer" id="flashSaleTimer">
+                        <span>Ends in: </span>
+                        <div class="timer-units">
+                            <div class="timer-unit">
+                                <span id="hours">24</span>
+                                <span>Hours</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span id="minutes">00</span>
+                                <span>Minutes</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span id="seconds">00</span>
+                                <span>Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Up to 70% OFF</h3>
+                    <p>On Selected Electronics</p>
+                    <button class="offer-btn">Shop Now</button>
+                </div>
+           
+                <div class="offer-card membership">
+                    <div class="offer-badge">
+                        <i class="fas fa-crown"></i> Members Only
+                    </div>
+                    <h3>Extra 20% OFF</h3>
+                    <p>For Premium Members</p>
+                    <button class="offer-btn">Join Now</button>
+                </div>
+                <div class="offer-card clearance">
+                    <div class="offer-badge">
+                        <i class="fas fa-tags"></i> Clearance
+                    </div>
+                    <h3>Up to 80% OFF</h3>
+                    <p>End of Season Sale</p>
+                    <button class="offer-btn">View Deals</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-<!-- Special Offers Section -->
-<section class="offers">
-    <h2>🔥 Special Offers</h2>
-    <div class="offer-container">
-        <div class="offer-card">💥 50% Off on Smart Watches</div>
-        <div class="offer-card">🎧 Buy 1 Get 1 Free on Headphones</div>
-        <div class="offer-card">🖱️ 30% Off on Wireless Mouse</div>
-    </div>
-</section>
->>>>>>> Stashed changes
     <main>
-        <h2 class="products-heading">Our Latest Collection</h2>
+        <h2 class="products-heading-left">Our Latest Collection</h2>
         <section class="products" id="products">
-<<<<<<< Updated upstream
-=======
-            
+           
             <!-- Products will be dynamically added here -->
->>>>>>> Stashed changes
+        </section>
+        <h2 class="products-heading-right">Our Latest Collection</h2>
+        <section class="products" id="products">
+           
+            <!-- Products will be dynamically added here -->
         </section>
         <div class="product-sidebar" id="product-sidebar">
             <div class="cart-header">
@@ -75,61 +140,57 @@
         </div>
     </main>
 
-    <!-- Customer Reviews Section -->
-    <section class="reviews">
-        <h2>What Our Customers Say</h2>
-        <div class="review-container">
-            <div class="review-card">
-                <p>"Amazing quality and fast delivery!"</p>
-                <span>⭐⭐⭐⭐⭐</span>
+    <!-- Service Section -->
+    <section class="service_section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Experience the best shopping with our premium services</p>
             </div>
-            <div class="review-card">
-                <p>"Great deals and excellent customer service!"</p>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <div class="review-card">
-                <p>"Highly recommend! Will buy again."</p>
-                <span>⭐⭐⭐⭐⭐</span>
+            <div class="row">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h5>Fast Delivery</h5>
+                    <p>Get your products delivered quickly with our express shipping.</p>
+                    <div class="service-hover">
+                        <span>24-48 Hour Delivery</span>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h5>Free Shipping</h5>
+                    <p>Enjoy free shipping on all orders with no minimum purchase.</p>
+                    <div class="service-hover">
+                        <span>Zero Shipping Cost</span>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h5>Best Quality</h5>
+                    <p>We offer top-notch products with premium quality assurance.</p>
+                    <div class="service-hover">
+                        <span>Quality Guaranteed</span>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h5>24x7 Support</h5>
+                    <p>Our team is available round the clock to assist you.</p>
+                    <div class="service-hover">
+                        <span>Always Available</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-   
-    <section class="service_section">
-        <h2>Why Choose ShopEasy?</h2>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6 col-lg-3">
-              <div class="box">
-                <div class="img-box"><img src="assets/images/feature-1.png" alt="website template image"></div>
-                <div class="detail-box">
-                  <h5>Fast Delivery</h5>
-                  <p>variations of passages of Lorem Ipsum available</p>
-                </div>
-              </div>
-            </div>
-           
-            <div class="col-md-6 col-lg-3">
-              <div class="box">
-                <div class="img-box"><img src="assets/images/feature-3.png" alt="website template image"></div>
-                <div class="detail-box">
-                  <h5>Best Quality</h5>
-                  <p>variations of passages of Lorem Ipsum available</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="box">
-                <div class="img-box"><img src="assets/images/feature-4.png" alt="website template image"></div>
-                <div class="detail-box">
-                  <h5>24x7 Customer support</h5>
-                  <p>variations of passages of Lorem Ipsum available</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     <footer>
         <div class="footer-container">
             <div class="footer-logo">ShopEasy</div>
@@ -144,21 +205,11 @@
             </div>
         </div>
     </footer>
-<<<<<<< Updated upstream
     <script>
         function closeProductDetail() {
         document.getElementById('product-sidebar').classList.toggle('open');
         }
     </script>
-=======
-    
->>>>>>> Stashed changes
     <script src="script.js"></script>
-    
-      
 </body>
-<<<<<<< Updated upstream
 </html>
-=======
-</html>
->>>>>>> Stashed changes

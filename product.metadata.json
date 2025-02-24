@@ -23,6 +23,12 @@
             "name": "Wireless Mouse",
             "price": 29.99,
             "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
+        },
+        {
+            "id": 5,
+            "name": "Smart Watch",
+            "price": 199.99,
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
         }
     ]
 }

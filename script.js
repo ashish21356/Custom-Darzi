@@ -140,7 +140,7 @@ class Cart {
                     <h3 class="product-title">${product.name}</h3>
                     <p class="product-price"> ₹${product.price.toFixed(2)}</p>
                     <button class="add-to-cart" data-product-id=${product.id}>
-                        Add to Cart
+                        View Product
                     </button>
                 </div>
             </div>
@@ -280,7 +280,6 @@ class Cart {
     }
 }
 
-<<<<<<< Updated upstream
 // Toggle cart sidebar
 toggleCart = () => {
     const cartSidebar = document.getElementById('cart-sidebar');
@@ -288,21 +287,87 @@ toggleCart = () => {
     // const DbConnection = new Db();
 }
 
-const objCart = new Cart();
-=======
+
 // Hero Section Heading Effect
 document.addEventListener("DOMContentLoaded", function () {
-    let heroHeading = document.getElementById("hero-heading");
-    let colors = ["#ffcc00", "#ff5733", "#33ff57", "#3399ff"];
-    let index = 0;
+    // Smooth scroll function
+    function scrollToElement(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
 
-    setInterval(() => {
-        heroHeading.style.color = colors[index];
-        index = (index + 1) % colors.length;
-    }, 1000);
+    // Expose scroll functions globally
+    window.scrollToProducts = function() {
+        scrollToElement('products');
+    };
+
+    window.scrollToServices = function() {
+        scrollToElement('services');
+    };
+
+    // Animate stats when they come into view
+    const stats = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+            }
+        });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => observer.observe(stat));
+
+    // Service boxes hover effect
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    serviceBoxes.forEach(box => {
+        box.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+
+        box.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });
 
 
->>>>>>> Stashed changes
+// Set the initial countdown time (24 hours from now)
+let countdownTime = 24 * 60 * 60; // 24 hours in seconds
+
+function startCountdown() {
+    const hoursElem = document.getElementById("hours");
+    const minutesElem = document.getElementById("minutes");
+    const secondsElem = document.getElementById("seconds");
+
+    function updateTimer() {
+        let hours = Math.floor(countdownTime / 3600);
+        let minutes = Math.floor((countdownTime % 3600) / 60);
+        let seconds = countdownTime % 60;
+
+        hoursElem.textContent = String(hours).padStart(2, "0");
+        minutesElem.textContent = String(minutes).padStart(2, "0");
+        secondsElem.textContent = String(seconds).padStart(2, "0");
+
+        if (countdownTime > 0) {
+            countdownTime--;
+            setTimeout(updateTimer, 1000);
+        } else {
+            document.getElementById("flashSaleTimer").innerHTML = "<span>Flash Sale Ended!</span>";
+        }
+    }
+
+    updateTimer();
+}
+
+// Start the countdown when the page loads
+window.onload = startCountdown;
+
+
+const objCart = new Cart();
 // Initialize the page when the DOM is loaded
 document.addEventListener('DOMContentLoaded', objCart.initializePage);
