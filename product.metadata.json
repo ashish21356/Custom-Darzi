@@ -1,4 +1,5 @@
 {
+    
     "products": [
         {
             "id": 1,
@@ -23,6 +24,25 @@
             "name": "Wireless Mouse",
             "price": 29.99,
             "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
-        }
+        },
+        {
+            "id": 5,
+            "name": "Smart Watch",
+            "price": 199.99,
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+        },
+        {
+            "id": 6,
+            "name": "Classic White T-Shirt",
+            "price": 599.99,
+            "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+            "images": [
+              "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+              "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500",
+              "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
+            ],
+            "sizes": [36,38,40,42],
+            "description": "Premium cotton t-shirt perfect for everyday wear. Comfortable fit and durable material."
+          }
     ]
 }
