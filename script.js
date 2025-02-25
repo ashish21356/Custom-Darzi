@@ -170,13 +170,15 @@ displayProducts = (products) => {
 
     // add event listeners
     addEventListener = () => {
-        document.querySelector('.products').addEventListener('click', (event) => {
+        document.querySelector('#product-sidebar').addEventListener('click', (event) => {
             if(event.target && event.target.classList.contains('add-to-cart')) {
                 const productId = event.target.getAttribute('data-product-id');
                 this.addToCart(productId);
-                // event.stopPropagation();
+                this.toggleProductDetail();
             }
+        });
 
+        document.querySelector('.products').addEventListener('click', (event) => {
             if(event.target && event.target.closest('.product-card')) {
                 
                 const productId = event.target.closest('.product-card').getAttribute('data-product-id');
