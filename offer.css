@@ -14,7 +14,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(228, 231, 54, 0.2) 0%, rgba(228, 231, 54, 0.452) 100%);
+
     z-index: 0;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .offer-card {
-    background: linear-gradient(135deg, #b5d8bb 0%, #6a7a6a 100%);
+    background: linear-gradient(135deg, rgba(228, 231, 54, 0.2) 0%, rgba(228, 231, 54, 0.452) 100%);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -84,7 +85,7 @@
 }
 
 .flash-sale {
-    background: linear-gradient(135deg, #b5d8bb 0%, #6a7a6a 100%);
+    background: linear-gradient(135deg, rgba(228, 231, 54, 0.2) 0%, rgba(228, 231, 54, 0.452) 100%);
 }
 
 .offer-timer {
