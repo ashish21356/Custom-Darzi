@@ -261,7 +261,7 @@ button {
     transform: rotate(10deg);
     transition: all 0.5s ease-in-out;
     animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-    filter: drop-shadow(2px 2px 3px rgba(163, 163, 163, 0.3));
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
   }
   
   button:hover .icon-1 {
@@ -606,7 +606,7 @@ body {
     }
 }
 header {
-    /* background: linear-gradient(135deg, rgba(228, 231, 54, 0.2) 0%, rgba(228, 231, 54, 0) 100%); */
+    background: linear-gradient(135deg, rgba(228, 231, 54, 0.2) 0%, rgba(228, 231, 54, 0) 100%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
