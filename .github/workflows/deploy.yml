@@ -30,7 +30,7 @@ jobs:
 
       # Deploy to InfinityFree via FTP
       - name: Deploy to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           ftp-server: ftpupload.net
           ftp-username: if0_38377025
