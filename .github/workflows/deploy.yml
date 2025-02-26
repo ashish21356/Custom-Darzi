@@ -1,36 +1,39 @@
-name: Deploy to InfinityFree
+name: Build and Deploy to InfinityFree
 
 on:
   push:
     branches:
-      - main  # Trigger the action when there's a push to the main branch
+      - main # Adjust if you're using another branch
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  # Checks out the code in the repository
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '16'  # Or your desired version of Node.js
 
-      - name: Install Dependencies
-        run: npm i
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-      - name: Build Project
+      # Build the project (e.g. React, Angular, etc.)
+      - name: Build project
         run: npm run build
 
+      # Deploy to InfinityFree via FTP
       - name: Deploy to InfinityFree
-        uses: Samkirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          server: ftpupload.net
-          username: if0_38377025
-          password: Worldstar123
-          local-dir: ./dist/
-          server-dir: /htdocs
-          protocol: ftps
-
+          ftp-server: ftpupload.net
+          ftp-username: if0_38377025
+          ftp-password: Worldstar123
+          local-dir: ./dist # Make sure this matches your build output
+          remote-dir: /htdocs # Path where you want to deploy in InfinityFree
