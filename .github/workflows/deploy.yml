@@ -32,8 +32,8 @@ jobs:
       - name: Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          ftp-server: ftpupload.net
-          ftp-username: if0_38377025
-          ftp-password: Worldstar123
+          server: ftpupload.net
+          username: if0_38377025
+          password: Worldstar123
           local-dir: ./dist # Make sure this matches your build output
-          remote-dir: /htdocs # Path where you want to deploy in InfinityFree
+          server-dir: /htdocs # Path where you want to deploy in InfinityFree
