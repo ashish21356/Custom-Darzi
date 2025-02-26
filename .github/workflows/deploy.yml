@@ -30,10 +30,11 @@ jobs:
 
       # Deploy to InfinityFree via FTP
       - name: Deploy to InfinityFree
+        run: ls
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftpupload.net
           username: if0_38377025
           password: Worldstar123
-          local-dir: ./dist # Make sure this matches your build output
+          local-dir: ./dist/ # Make sure this matches your build output
           server-dir: /htdocs # Path where you want to deploy in InfinityFree
