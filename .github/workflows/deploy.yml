@@ -26,11 +26,10 @@ jobs:
 
       # Build the project (e.g. React, Angular, etc.)
       - name: Build project
-        run: cd react && npm run build
+        run: cd react && npm run build && ls
 
       # Deploy to InfinityFree via FTP
       - name: Deploy to InfinityFree
-        run: ls
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftpupload.net
