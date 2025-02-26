@@ -6,7 +6,7 @@ on:
       - main # Adjust if you're using another branch
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,32 +24,32 @@ jobs:
         with:
           node-version: '16'  # Or your desired version of Node.js
 
-    setup-node:
-      runs-on: ubuntu-latest
+  install-dependencies:
+    runs-on: ubuntu-latest
 
-      steps:
-        # Install dependencies
-        - name: Install dependencies
-          run: cd react && npm install
+    steps:
+      # Install dependencies
+      - name: Install dependencies
+        run: cd react && npm install
 
-    setup-node:
-      runs-on: ubuntu-latest
+  build-project:
+    runs-on: ubuntu-latest
 
-      steps:
-        # Build the project (e.g. React, Angular, etc.)
-        - name: Build project
-          run: cd react && npm run build && ls
+    steps:
+      # Build the project (e.g. React, Angular, etc.)
+      - name: Build project
+        run: cd react && npm run build && ls
 
-    setup-node:
-      runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-      steps:
-        # Deploy to InfinityFree via FTP
-        - name: Deploy to InfinityFree
-          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-          with:
-            server: ftpupload.net
-            username: if0_38377025
-            password: Worldstar123
-            local-dir: ./react/dist/ # Make sure this matches your build output
-            server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
+    steps:
+      # Deploy to InfinityFree via FTP
+      - name: Deploy to InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftpupload.net
+          username: if0_38377025
+          password: Worldstar123
+          local-dir: ./react/dist/ # Make sure this matches your build output
+          server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
