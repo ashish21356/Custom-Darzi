@@ -35,5 +35,5 @@ jobs:
           server: ftpupload.net
           username: if0_38377025
           password: Worldstar123
-          local-dir: ./dist/ # Make sure this matches your build output
+          local-dir: ./react/dist/ # Make sure this matches your build output
           server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
