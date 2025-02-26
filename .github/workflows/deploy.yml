@@ -1,55 +1,36 @@
-name: Build and Deploy to InfinityFree
+name: Deploy to InfinityFree
 
 on:
   push:
     branches:
-      - main # Adjust if you're using another branch
+      - main  # Trigger the action when there's a push to the main branch
 
 jobs:
-  checkout:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-  setup-node:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Or your desired version of Node.js
-
-  install-dependencies:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Install dependencies
-      - name: Install dependencies
-        run: cd react && npm install
-
-  build-project:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Build the project (e.g. React, Angular, etc.)
-      - name: Build project
-        run: cd react && npm run build && ls
-
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # Deploy to InfinityFree via FTP
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checks out the code in the repository
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm i
+
+      - name: Build Project
+        run: npm run build
+
       - name: Deploy to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: Samkirkland/FTP-Deploy-Action@v4
         with:
           server: ftpupload.net
           username: if0_38377025
           password: Worldstar123
-          local-dir: ./react/dist/ # Make sure this matches your build output
-          server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
+          local-dir: ./dist/
+          server-dir: /htdocs
+          protocol: ftps
+
