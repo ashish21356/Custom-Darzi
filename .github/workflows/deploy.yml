@@ -30,7 +30,7 @@ jobs:
           server: ftpupload.net
           username: if0_38377025
           password: Worldstar123
-          llocal-dir: ./dist/
-          llocal-dir: /htdocs
+          local-dir: ./dist/
+          server-dir: /htdocs
           protocol: ftps
 
