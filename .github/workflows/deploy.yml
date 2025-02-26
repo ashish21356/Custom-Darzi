@@ -1,22 +1,55 @@
-# .github/workflows/deploy-infinityfree.yml
-name: Deploy to InfinityFree
+name: Build and Deploy to InfinityFree
 
 on:
-  workflow_run:
-    workflows: ["Build Project"]  # Dependent on the build project workflow
-    types:
-      - completed
+  push:
+    branches:
+      - main # Adjust if you're using another branch
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to InfinityFree via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+  setup-node:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          server: ftpupload.net
-          username: if0_38377025
-          password: Worldstar123
-          local-dir: ./react/dist/ # Make sure this matches your build output
-          server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
+          node-version: '16'  # Or your desired version of Node.js
+
+    setup-node:
+      runs-on: ubuntu-latest
+
+      steps:
+        # Install dependencies
+        - name: Install dependencies
+          run: cd react && npm install
+
+    setup-node:
+      runs-on: ubuntu-latest
+
+      steps:
+        # Build the project (e.g. React, Angular, etc.)
+        - name: Build project
+          run: cd react && npm run build && ls
+
+    setup-node:
+      runs-on: ubuntu-latest
+
+      steps:
+        # Deploy to InfinityFree via FTP
+        - name: Deploy to InfinityFree
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          with:
+            server: ftpupload.net
+            username: if0_38377025
+            password: Worldstar123
+            local-dir: ./react/dist/ # Make sure this matches your build output
+            server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
