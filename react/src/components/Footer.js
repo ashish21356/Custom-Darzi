@@ -32,7 +32,7 @@ const Footer = () => {
                             Contact Us
                         </Typography>
                         <Typography variant="body2" color="textSecondary">Email: support@kurtashop.com</Typography>
-                        <Typography variant="body2" color="textSecondary">Phone: +91 98765 43210</Typography>
+                        <Typography variant="body2" color="textSecondary">Phone: +91 12345 67890</Typography>
                     </Grid>
                 </Grid>
                 
