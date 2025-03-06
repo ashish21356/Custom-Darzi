@@ -28,12 +28,18 @@ jobs:
       - name: Build project
         run: cd react && npm run build && ls
 
-      # Deploy to InfinityFree via FTP
-      - name: Deploy to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # Deploy to Github Actions
+      - name: Deply to Github pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          server: ftpupload.net
-          username: if0_38377025
-          password: Worldstar123
-          local-dir: ./react/dist/ # Make sure this matches your build output
-          server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
+          branch: gh-pages
+          folder: dist
+      # # Deploy to InfinityFree via FTP
+      # - name: Deploy to InfinityFree
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #   with:
+      #     server: ftpupload.net
+      #     username: if0_38377025
+      #     password: Worldstar123
+      #     local-dir: ./react/dist/ # Make sure this matches your build output
+      #     server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
