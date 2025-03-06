@@ -32,8 +32,11 @@ jobs:
       - name: Deply to Github pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist
+          branch: gh-pages  # Target branch for GitHub Pages
+          folder: dist  # Directory to deploy
+          clean: true  # Ensures old files are removed
+          clean-exclude: ""  # Prevents unnecessary exclusions
+          single-commit: true  # Keeps only the latest deployment commit
       # # Deploy to InfinityFree via FTP
       # - name: Deploy to InfinityFree
       #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
