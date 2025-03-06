@@ -34,7 +34,7 @@ jobs:
       - name: Verify Build Directory
         run: |
           echo "Checking build output..."
-          ls -la dist || echo "⚠️ dist directory not found!"
+          ls echo "⚠️ dist directory not found!"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
