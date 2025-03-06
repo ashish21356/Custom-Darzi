@@ -5,6 +5,9 @@ on:
     branches:
       - main # Adjust if you're using another branch
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,15 +31,20 @@ jobs:
       - name: Build project
         run: cd react && npm run build && ls
 
-      # Deploy to Github Actions
-      - name: Deply to Github pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Verify Build Directory
+        run: |
+          echo "Checking build output..."
+          ls -la dist || echo "⚠️ dist directory not found!"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          branch: gh-pages  # Target branch for GitHub Pages
-          folder: dist  # Directory to deploy
-          clean: true  # Ensures old files are removed
-          clean-exclude: ""  # Prevents unnecessary exclusions
-          single-commit: true  # Keeps only the latest deployment commit
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist  # Deploy 'dist' contents to root of 'gh-pages'
+          keep_files: false  # Remove old files before deploying
+          force_orphan: true  # Overwrite all commits, keeping only the latest
+
+          
       # # Deploy to InfinityFree via FTP
       # - name: Deploy to InfinityFree
       #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
