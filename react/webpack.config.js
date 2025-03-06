@@ -24,10 +24,10 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader',
+            loader: require.resolve('css-loader'),
             options: {
               modules: true,
-              localsConvention: 'camelCase',
+              // localsConvention: 'camelCase',
               sourceMap: true
             }
           }

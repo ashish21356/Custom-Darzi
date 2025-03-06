@@ -1,10 +1,15 @@
 import React from 'react';
+import Header from './src/components/Header';
+import Footer from './src/components/Footer';
+import Body from './src/components/Body';
 
 const App = () => {
   return (
-      <div>
-        Hello from React
-      </div>
+      <React.Fragment>
+        <Header />
+        <Body />
+        <Footer />
+      </React.Fragment>
   );
 };
 
