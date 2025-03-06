@@ -29,7 +29,7 @@ jobs:
 
       # Build the project (e.g. React, Angular, etc.)
       - name: Build project
-        run: cd react && npm run build && ls
+        run: cd react && npm run build && ls -la dist || echo "⚠️ dist directory not found!" 
 
       - name: Verify Build Directory
         run: |
