@@ -52,10 +52,10 @@ const Header = () => {
 
             {/* Mobile Drawer */}
             <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle}>
-                <Box sx={{ width: 250 }}>
+                <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle}>
                     <List>
                         {navItems.map((item) => (
-                            <ListItem button key={item} onClick={handleDrawerToggle}>
+                            <ListItem button key={item}>
                                 <ListItemText primary={item} sx={{ textAlign: "center" }} />
                             </ListItem>
                         ))}
