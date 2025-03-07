@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import products from "../components/product.metadata.json";
 
 const Home = ({ setRoute }) => {
-    const topSelling = products.products.slice(0, 4);
+    const topSelling = products.products.slice(0, 2);
 
     const sliderSettings = {
         dots: true,
