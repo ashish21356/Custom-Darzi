@@ -44,8 +44,8 @@ const Home = ({ setRoute }) => {
                 {categories.map((category) => (
                     <Box key={category.name} sx={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
                         <Card onClick={() => setRoute('/shop')} key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
-                            <CardMedia component="img" image={category.image} alt={category.name} sx={{ opacity:'1', width: "100%", height: "100%", filter: "grayscale(50%) blur(2px)" }} />
-                            <Typography variant="caption" sx={{ position: "absolute", top: '50%', textAlign: 'center', transform: 'translateX(0%)',  color: "white", padding: "2px 5px", borderRadius: "5px", backgroundColor:'rgba(0, 0, 0, 0.6)' }}>
+                            <CardMedia component="img" image={category.image} alt={category.name} sx={{ opacity: '1', width: "100%", height: "100%", filter: "grayscale(50%) blur(2px)" }} />
+                            <Typography variant="caption" sx={{ position: "absolute", top: '50%', textAlign: 'center', transform: 'translateX(0%)', color: "white", padding: "2px 5px", borderRadius: "5px", backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                                 {category.name}
                             </Typography>
                         </Card>
@@ -55,10 +55,10 @@ const Home = ({ setRoute }) => {
 
             {/* Top Selling Section */}
             <Typography variant="h5" sx={{ mt: 4, mb: 2, textAlign: "center" }}>Top Selling Products</Typography>
-            <Grid container spacing={2} justifyContent="center">
+            <Grid container spacing={2} justifyContent={{ xs: "space-around", md: "center" }}>
                 {topSelling.map((product) => (
-                    <Grid item key={product.id} xs={6} sm={3}>
-                        <Card sx={{ minWidth: { xs: 148, sm: 200, md: 200 }, maxWidth: { xs: 148, sm: 250, md: 200 }, height: "100%",textAlign: "center", boxShadow: 3 }}>
+                    <Grid item key={product.id} display="flex" justifyContent={{ xs: "space-around", md: "center" }}>
+                        <Card sx={{ textAlign: "center", boxShadow: 3, width: "100%", minWidth: { xs: 150, sm: 250, md: 300 }, maxWidth: { xs: 150, sm: 250, md: 300 } }}>
                             <CardMedia component="img" height="150" image={product.image} alt={product.name} />
                             <CardContent>
                                 <Typography variant="body1">{product.name}</Typography>
