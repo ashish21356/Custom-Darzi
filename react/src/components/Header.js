@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
@@ -43,11 +43,11 @@ const Header = () => {
                 </Box>
 
                 {/* Cart Icon */}
-                <IconButton>
+                {/* <IconButton>
                     <Badge badgeContent={3} color="error">
                         <ShoppingCartIcon sx={{ color: "gray", "&:hover": { color: "black" } }} />
                     </Badge>
-                </IconButton>
+                </IconButton> */}
             </Toolbar>
 
             {/* Mobile Drawer */}

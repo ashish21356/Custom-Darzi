@@ -9,7 +9,7 @@ const Body = () => {
         <Grid container spacing={2} sx={{ padding: { xs: 1, sm: 3 } }}>
             {products.products.map((product) => (
                 <Grid item key={product.id} xs={6} sm={6} md={2}>
-                    <Card sx={{ textAlign: "center", boxShadow: 3, maxWidth: { xs: 180, sm: 250, md: 300 }, margin: "auto" }}>
+                    <Card sx={{ height: "100%", textAlign: "center", display: "flex", flexDirection: "column", boxShadow: 3, maxWidth: { xs: 180, sm: 250, md: 300 }, margin: "auto" }}>
                         <CardMedia component="img" height="150" image={product.image} alt={product.name} sx={{ objectFit: "contain" }} />
                         <CardContent>
                             <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "0.9rem", sm: "1.00rem" } }}>
