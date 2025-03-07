@@ -1,9 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Container } from "@mui/material";
 import Slider from "react-slick";
 import products from "../components/product.metadata.json";
 
-const Home = ({setRoute}) => {
+const Home = ({ setRoute }) => {
     const topSelling = products.products.slice(0, 4);
 
     const sliderSettings = {
@@ -17,10 +17,10 @@ const Home = ({setRoute}) => {
     };
 
     const categories = [
-        { name: "Men", image: "https://via.placeholder.com/100" },
-        { name: "Women", image: "https://via.placeholder.com/100" },
-        { name: "Kids", image: "https://via.placeholder.com/100" },
-        { name: "Accessories", image: "https://via.placeholder.com/100" }
+        { name: "Indo Western", image: 'https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180' },
+        { name: "Women", image: "https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180" },
+        { name: "Kids", image: "https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180" },
+        { name: "Accessories", image: "https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180" }
     ];
 
     return (
@@ -40,13 +40,15 @@ const Home = ({setRoute}) => {
 
             {/* Categories Section */}
             <Typography variant="h5" sx={{ mt: 4, mb: 2, textAlign: "center" }}>Shop by Category</Typography>
-            <Box sx={{ display: "flex", overflowX: "auto", gap: 2, p: 2, justifyContent: "center" }}>
+            <Box sx={{ display: "flex", overflowX: "auto", gap: 2, pb: 2, justifyContent: { xs: "flex-start", md: "center" } }}>
                 {categories.map((category) => (
-                    <Box key={category.name} sx={{ textAlign: "center", minWidth: 120 }}>
-                        <Card onClick={() => setRoute('/shop')} sx={{ borderRadius: "50%", overflow: "hidden", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3 }}>
-                            <CardMedia component="img" image={category.image} alt={category.name} sx={{ width: "100%", height: "100%" }} />
+                    <Box key={category.name} sx={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
+                        <Card key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
+                            <CardMedia component="img" image={category.image} alt={category.name} sx={{ opacity:'1', width: "100%", height: "100%", filter: "grayscale(50%) blur(2px)" }} />
+                            <Typography variant="caption" sx={{ position: "absolute", top: '50%', textAlign: 'center', transform: 'translateX(0%)',  color: "white", padding: "2px 5px", borderRadius: "5px", backgroundColor:'rgba(0, 0, 0, 0.6)' }}>
+                                {category.name}
+                            </Typography>
                         </Card>
-                        <Typography variant="body1" sx={{ mt: 1 }}>{category.name}</Typography>
                     </Box>
                 ))}
             </Box>
