@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Container } from "@mui/material";
+import { Box, Typography, Grid2 as Grid, Card, CardMedia, CardContent, Button, Container } from "@mui/material";
 import Slider from "react-slick";
 import products from "../components/product.metadata.json";
 
@@ -43,7 +43,7 @@ const Home = ({ setRoute }) => {
             <Box sx={{ display: "flex", overflowX: "auto", gap: 2, pb: 2, justifyContent: { xs: "flex-start", md: "center" } }}>
                 {categories.map((category) => (
                     <Box key={category.name} sx={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
-                        <Card key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
+                        <Card onClick={() => setRoute('/shop')} key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
                             <CardMedia component="img" image={category.image} alt={category.name} sx={{ opacity:'1', width: "100%", height: "100%", filter: "grayscale(50%) blur(2px)" }} />
                             <Typography variant="caption" sx={{ position: "absolute", top: '50%', textAlign: 'center', transform: 'translateX(0%)',  color: "white", padding: "2px 5px", borderRadius: "5px", backgroundColor:'rgba(0, 0, 0, 0.6)' }}>
                                 {category.name}
@@ -58,7 +58,7 @@ const Home = ({ setRoute }) => {
             <Grid container spacing={2} justifyContent="center">
                 {topSelling.map((product) => (
                     <Grid item key={product.id} xs={6} sm={3}>
-                        <Card sx={{ textAlign: "center", boxShadow: 3 }}>
+                        <Card sx={{ height: "100%",textAlign: "center", boxShadow: 3 }}>
                             <CardMedia component="img" height="150" image={product.image} alt={product.name} />
                             <CardContent>
                                 <Typography variant="body1">{product.name}</Typography>
