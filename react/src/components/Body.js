@@ -6,7 +6,7 @@ const CURRENCY = '₹';
 
 const Body = () => {
     return (
-        <Grid container spacing={2} sx={{ padding: { xs: 1, sm: 3 } }}>
+        <Grid container spacing={2} justifyContent={{ xs: "space-around", md: "center" }} sx={{ padding: { xs: 1, sm: 3 } }}>
             {products.products.map((product) => (
                 <Grid item key={product.id} xs={6} sm={6} md={2}>
                     <Card sx={{ height: "100%", textAlign: "center", display: "flex", flexDirection: "column", boxShadow: 3, minWidth: { xs: 155, sm: 250, md: 220 }, maxWidth: { xs: 150, sm: 250, md: 300 }, margin: "auto" }}>
