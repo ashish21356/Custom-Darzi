@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, List
 // import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const Header = () => {
+const Header = ({setRoute}) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
@@ -21,7 +21,7 @@ const Header = () => {
                 </IconButton>
                 
                 {/* Logo */}
-                <Typography variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
+                <Typography onClick={() => setRoute('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
                     KurtaShop
                 </Typography>
 

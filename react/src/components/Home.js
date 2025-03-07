@@ -2,12 +2,9 @@ import React from "react";
 import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Container } from "@mui/material";
 import Slider from "react-slick";
 import products from "../components/product.metadata.json";
-import {useNavigate} from 'react-router-dom'; 
 
-const Home = () => {
+const Home = ({setRoute}) => {
     const topSelling = products.products.slice(0, 4);
-
-    const navigate = useNavigate();
 
     const sliderSettings = {
         dots: true,
@@ -46,7 +43,7 @@ const Home = () => {
             <Box sx={{ display: "flex", overflowX: "auto", gap: 2, p: 2, justifyContent: "center" }}>
                 {categories.map((category) => (
                     <Box key={category.name} sx={{ textAlign: "center", minWidth: 120 }}>
-                        <Card onClick={() => navigate('/shop')} sx={{ borderRadius: "50%", overflow: "hidden", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3 }}>
+                        <Card onClick={() => setRoute('/shop')} sx={{ borderRadius: "50%", overflow: "hidden", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3 }}>
                             <CardMedia component="img" image={category.image} alt={category.name} sx={{ width: "100%", height: "100%" }} />
                         </Card>
                         <Typography variant="body1" sx={{ mt: 1 }}>{category.name}</Typography>
