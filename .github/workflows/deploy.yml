@@ -29,18 +29,16 @@ jobs:
 
       # Build the project (e.g. React, Angular, etc.)
       - name: Build project
-        run: cd react && npm run build && ls -la dist || echo "⚠️ dist directory not found!" 
+        run: cd react && npm run build
 
       - name: Verify Build Directory
-        run: |
-          echo "Checking build output..."
-          ls
+        run: ls -la react/dist || echo "⚠️ react/dist directory not found!"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist  # Deploy 'dist' contents to root of 'gh-pages'
+          publish_dir: react/dist  # Deploy 'dist' contents to root of 'gh-pages'
           keep_files: false  # Remove old files before deploying
           force_orphan: true  # Overwrite all commits, keeping only the latest
 
