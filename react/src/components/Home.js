@@ -58,7 +58,7 @@ const Home = ({ setRoute }) => {
             <Grid container spacing={2} justifyContent="center">
                 {topSelling.map((product) => (
                     <Grid item key={product.id} xs={6} sm={3}>
-                        <Card sx={{ height: "100%",textAlign: "center", boxShadow: 3 }}>
+                        <Card sx={{ minWidth: { xs: 148, sm: 200, md: 200 }, maxWidth: { xs: 148, sm: 250, md: 200 }, height: "100%",textAlign: "center", boxShadow: 3 }}>
                             <CardMedia component="img" height="150" image={product.image} alt={product.name} />
                             <CardContent>
                                 <Typography variant="body1">{product.name}</Typography>
