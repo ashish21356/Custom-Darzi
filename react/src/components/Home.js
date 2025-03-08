@@ -1,11 +1,12 @@
-import React, { lazy } from "react";
-import { Box, Typography, Grid2 as Grid, Card, CardMedia, CardContent, Button, Container } from "@mui/material";
+import React, { lazy, useRef } from "react";
+import { Box, Typography, Grid2 as Grid, Card, CardMedia, Container, IconButton } from "@mui/material";
 import Slider from "react-slick";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import products from "../components/product.metadata.json";
+import ProductCard from "./common-components/Card";
 
 const Home = ({ setRoute }) => {
-    const topSelling = products.products.slice(0, 2);
-
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -54,23 +55,61 @@ const Home = ({ setRoute }) => {
             </Box>
 
             {/* Top Selling Section */}
-            <Typography variant="h5" sx={{ mt: 4, mb: 2, textAlign: "center" }}>Top Selling Products</Typography>
-            <Grid container spacing={2} justifyContent={{ xs: "space-around", md: "center" }}>
-                {topSelling.map((product) => (
-                    <Grid item key={product.id} display="flex" justifyContent={{ xs: "space-around", md: "center" }}>
-                        <Card sx={{ textAlign: "center", boxShadow: 3, width: "100%", minWidth: { xs: 150, sm: 250, md: 300 }, maxWidth: { xs: 150, sm: 250, md: 300 } }}>
-                            <CardMedia component="img" height="150" image={product.image} alt={product.name} />
-                            <CardContent>
-                                <Typography variant="body1">{product.name}</Typography>
-                                <Typography variant="body2" color="textSecondary">{product.price}</Typography>
-                                <Button variant="contained" sx={{ mt: 1, backgroundColor: "black", color: "white" }}>Buy Now</Button>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
+            <TopSelling />
         </Container>
     );
 };
+
+const TopSelling = () => {
+    const topSelling = products.products.slice(0, 6); // More products for scrolling
+    const scrollRef = useRef(null);
+
+    const scrollLeft = () => {
+        scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    };
+
+    const scrollRight = () => {
+        scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+    };
+
+    return (
+        <Container maxWidth="md">
+            {/* Top Selling Products */}
+            <Typography variant="h5" sx={{ mt: 4, mb: 2, textAlign: "center" }}>Top Selling Products</Typography>
+
+            <Box sx={{ display: "flex", alignItems: "center", position: "relative" }}>
+                <IconButton onClick={scrollLeft} sx={{ position: "absolute", left: -30, zIndex: 2, backgroundColor: "white" }}>
+                    <ArrowBackIosIcon />
+                </IconButton>
+
+                <Box ref={scrollRef} sx={{
+                    display: "flex",
+                    overflowX: "auto",
+                    scrollBehavior: "smooth",
+                    gap: 2,
+                    paddingBottom: 2,
+                    scrollbarWidth: "none",
+                    "&::-webkit-scrollbar": { display: "none" },
+                }}>
+                    {topSelling.map((product) => (
+                        <Card key={product.id} sx={{
+                            flex: "0 0 auto",
+                            textAlign: "center",
+                            boxShadow: 3,
+                            width: 200,
+                        }}>
+                            <ProductCard key={product.id} product={product} />
+                        </Card>
+                    ))}
+                </Box>
+
+                <IconButton onClick={scrollRight} sx={{ position: "absolute", right: -30, zIndex: 2, backgroundColor: "white" }}>
+                    <ArrowForwardIosIcon />
+                </IconButton>
+            </Box>
+        </Container>
+    );
+};
+
 
 export default Home;
