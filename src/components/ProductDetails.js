@@ -13,7 +13,7 @@ import {
     AccordionSummary,
     AccordionDetails,
     Grid,
-    Paper
+    Divider
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import productsData from "../components/product.metadata.json";
@@ -61,8 +61,10 @@ const ProductDetails = () => {
                                         <CardMedia
                                             component="img"
                                             image={img}
+                                            // height={100}
+                                            sx={{objectFit: "contain", maxHeight: 500}}
                                             alt={`Kurta ${index + 1}`}
-                                            sx={{ height: "auto", objectFit: "cover", borderRadius: 2 }}
+                                            // sx={{ height: "100", objectFit: "fill", borderRadius: 2 }}
                                         />
                                     </Card>
                                 ))
@@ -75,20 +77,29 @@ const ProductDetails = () => {
                     {/* Right Side - Product Details */}
                     <Grid item xs={12} md={6}>
                         <CardContent>
-                            <Typography variant="h4" fontWeight="bold">{selectedProduct.name}</Typography>
-                            <Typography variant="h5" color="error" sx={{ my: 1 }}>
+                            <Typography variant="h6" fontWeight="bold">{selectedProduct.name}</Typography>
+                            <Typography variant="body2" color="error" sx={{ my: 1 }}>
                                 {selectedProduct.price}
                             </Typography>
-                            <Typography variant="body1" sx={{ mb: 2 }}>{selectedProduct.description}</Typography>
+                            <Typography variant="body2" color="success" sx={{ my: 1 }}>
+                                Incl of all taxes*
+                            </Typography>
 
                             {/* Size Selection */}
-                            <Typography variant="h6" sx={{ mb: 1 }}>Select Size:</Typography>
-                            <Grid container spacing={1}>
+                            {/* <Typography variant="h6" sx={{ mb: 1 }}>Select Size:</Typography> */}
+                            <Grid container spacing={1} mb={2}>
                                 {selectedProduct.sizes.map((size) => (
                                     <Grid item key={size}>
                                         <Button
                                             variant={selectedSize === size ? "contained" : "outlined"}
                                             color="primary"
+                                            sx={{    fontSize: '12px',
+                                                borderRadius: '50%',
+                                                minWidth: '40px',  // Ensures a round shape
+                                                height: '40px',     // Same as minWidth for circular shape
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',}}
                                             onClick={() => setSelectedSize(size)}
                                         >
                                             {size}
@@ -98,25 +109,28 @@ const ProductDetails = () => {
                             </Grid>
 
                             {/* Product Details Accordion */}
-                            <Accordion elevation={2} sx={{ mt: 3 }}>
+                            <Divider />
+                            <Accordion sx={{ boxShadow: "none", background: "none", "&:before": { display: "none" } }}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography variant="h6">Product Description</Typography>
+                                    <Typography variant="body2" fontWeight="bold">Product Description</Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    Product details will come here...
+                                    {selectedProduct.description}
                                 </AccordionDetails>
                             </Accordion>
-                            <Accordion>
+                            <Divider />
+                            <Accordion sx={{ boxShadow: "none", background: "none", "&:before": { display: "none" } }}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography variant="h6">Product Specification</Typography>
+                                    <Typography variant="body2" fontWeight="bold">Product Specification</Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <Typography><strong>Material:</strong> {selectedProduct.details.material}</Typography>
-                                    <Typography><strong>Wash Care:</strong> {selectedProduct.details.washCare}</Typography>
-                                    <Typography><strong>Return Policy:</strong> {selectedProduct.details.returnPolicy}</Typography>
-                                    <Typography><strong>Shipping:</strong> {selectedProduct.details.shipping}</Typography>
+                                    <Typography variant="body2"><strong>Material:</strong> {selectedProduct.details.material}</Typography>
+                                    <Typography variant="body2"><strong>Wash Care:</strong> {selectedProduct.details.washCare}</Typography>
+                                    <Typography variant="body2"><strong>Return Policy:</strong> {selectedProduct.details.returnPolicy}</Typography>
+                                    <Typography variant="body2"><strong>Shipping:</strong> {selectedProduct.details.shipping}</Typography>
                                 </AccordionDetails>
                             </Accordion>
+                            <Divider />
 
                         </CardContent>
                     </Grid>
