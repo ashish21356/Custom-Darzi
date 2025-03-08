@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,65 +17,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # # Set up Node.js
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '20'  # Or your desired version of Node.js
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Or your desired version of Node.js
 
-      # # Install dependencies
-      # - name: Install dependencies
-      #   run: npm install
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-      # # Build the project (e.g. React, Angular, etc.)
-      # - name: Build project
-      #   run: npm run build
+      # Build the project (e.g. React, Angular, etc.)
+      - name: Build project
+        run: npm run build
 
-      # - name: Verify Build Directory
-      #   run: ls -la dist || echo "⚠️ react/dist directory not found!"
-
-      - name: Create SA key 🔑
-        run: |
-          echo '${{ {
-              "type": "service_account",
-              "project_id": "haatke",
-              "private_key_id": "fa4187c018505ba5b7d0bc3b5957c430e3cf4928",
-              "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDCLk9uFlDcvu6E\nj4qaOSweOMw52xllhF52cP1n1fqGVZobgykPn31WtF4q5EfdlLpZLEl9b7WLpXBS\nZDFtr0OXFY0vyQfJ77h1AvLDrmWJfaoKi0kOjKS2sMBX9UAD9ASLwSN4XqLqz6iA\nIxyfHujvrIIq5whEc6mE9VaM9rLrC9359jlDoPOM4wGSGhm7s7tMNmvtmOqXDfUh\nqbURepyI9DK3CibwBjv71eVNfoyv1YT+j/VAK/RPkG6ThZvkI0CFgHH3IqZiI9lr\ncB9AtPGjtG7sMEdAHduh4OfUGG1zp/ohjdg/FrrRHdRvQbyfJ2ER2qDIXUxIjSZl\nC3sHxitvAgMBAAECggEAC/kNn7stHp2zmKVxhXaoY29052cjIHD/Enl/PnN7DRf8\nUEPDK+BVh5uU2zst7TOTu+M9rGGcOL4pXoMoz9tvJPX77Lbazco3CuWOip89sBkS\nyEl0GaGol4HvEiogJnFzOE5fCmrdy75xff+F1VymcZfztlAX4LSeMefSTHXHn80E\n7qruMwEWGBGdwTRK20mQYXII0mjRtb9nFqRAByXjHTonuKumdKAYh0m9jM6y6qGH\nInQUvCGqlfwTve2vsGZZlsGBcqwL0OOLm8vX9XgHLFOMfOs9FSin/ASGvaJ7Fjzh\nadz+4aZ/yc4SPrLl6TeT47w24l6/kXxlIMebA/mRDQKBgQD622MP1ziFvB9KwsS2\nolnrajYr1P67bSBwqppS/S1oKsHpL9+xiuL5rlHQyB+BjcbTRx2NWVVGfcRegENc\ntpjOZKWUcohh/actXtlrpqjPZgBSa9T5lK8N5tu8ZIn5b38lBxvPNQAHT6vK/oxf\ntAECFv6P9zRt8QzwE1Guz/R3bQKBgQDGKXYMFtUpFmaPO4LEzvYaoAtE9xE9p4+Q\nVaBuEm6GHeO4ltJt03ZeC7bFrrSbAQkQeuM0ipDlOWFeoBOJPM5kTFV7uPnsZoEJ\nhdKQ4Kq9XkCmp9eoSfGnqFMDX9GCmUewJA4u25bhGZg/blE9kIgVxo5H1UTmQjeA\nf/1h1pZYywKBgFk1b5MQjG8yqUYi4WW5cpS/XqhTxIrOkfy/DsZ4do9WtULB3aD7\nrR/xl/LRWDLwQkacQawkmqjIzO52Wn48CTdMn32dBVcjpzIBSvx3dgzbTz4ATuq6\nr04YTQhAELj9p495abBUPsBa2tMDltPp5Xnix4BW/vQiBuHRXPj3xw45AoGABl+3\nCFSDrrqlud20KxhtGhYjxqgbydvl5kKa0m+NVosHlBxl0FqI6CWAT4N7E7FI1Vre\njAYY+waJdz224yctjFRYO46Lm2sAo4nGaBqR411wvuuPKD6Yo0fqw6UFXCoKAERo\noGE3zS3Bk+i8fDp15h1o3i6h9LYUivGS+N6qH1kCgYAR7wfuXwRJDEs6g+8by3Mg\nObGYJ2Ie+rlvsDdgai4yqfe/cwqPhAuTilu8QyNrhzp7lTyVc0t4bfhCjScVazOp\nN/+lR4FWOZZfyxR/d1Kcn+wCJyeEt71nExuSJiWq5J1tMcnmgQbyTL1HYhOBxlDo\niNOjalgTwcNlg9ChJPwEQA==\n-----END PRIVATE KEY-----\n",
-              "client_email": "firebase-adminsdk-fbsvc@haatke.iam.gserviceaccount.com",
-              "client_id": "117276035006319934087",
-              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-              "token_uri": "https://oauth2.googleapis.com/token",
-              "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-              "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40haatke.iam.gserviceaccount.com",
-              "universe_domain": "googleapis.com"
-            } }}' | base64 --decode > "$GITHUB_WORKSPACE/gcloud.json"
-      
-      - name: Set SA Key as Global Env 🌍
-        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$GITHUB_WORKSPACE/gcloud.json" >> $GITHUB_ENV
-
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+      - name: Verify Build Directory
+        run: ls -la dist || echo "⚠️ react/dist directory not found!"
 
       - name: Deploy to Firebase
-        run: |
-            firebase deploy --only hosting,functions:server --project website-*** --debug
+        run: npx firebase-tools deploy --only hosting --project haatke --token "1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4"
         # uses: FirebaseExtended/action-hosting-deploy@v0
         # with:
-        #   projectId: haatke
-        #   firebaseServiceAccount: |
-        #     {
-        #       "type": "service_account",
-        #       "project_id": "haatke",
-        #       "private_key_id": "fa4187c018505ba5b7d0bc3b5957c430e3cf4928",
-        #       "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDCLk9uFlDcvu6E\nj4qaOSweOMw52xllhF52cP1n1fqGVZobgykPn31WtF4q5EfdlLpZLEl9b7WLpXBS\nZDFtr0OXFY0vyQfJ77h1AvLDrmWJfaoKi0kOjKS2sMBX9UAD9ASLwSN4XqLqz6iA\nIxyfHujvrIIq5whEc6mE9VaM9rLrC9359jlDoPOM4wGSGhm7s7tMNmvtmOqXDfUh\nqbURepyI9DK3CibwBjv71eVNfoyv1YT+j/VAK/RPkG6ThZvkI0CFgHH3IqZiI9lr\ncB9AtPGjtG7sMEdAHduh4OfUGG1zp/ohjdg/FrrRHdRvQbyfJ2ER2qDIXUxIjSZl\nC3sHxitvAgMBAAECggEAC/kNn7stHp2zmKVxhXaoY29052cjIHD/Enl/PnN7DRf8\nUEPDK+BVh5uU2zst7TOTu+M9rGGcOL4pXoMoz9tvJPX77Lbazco3CuWOip89sBkS\nyEl0GaGol4HvEiogJnFzOE5fCmrdy75xff+F1VymcZfztlAX4LSeMefSTHXHn80E\n7qruMwEWGBGdwTRK20mQYXII0mjRtb9nFqRAByXjHTonuKumdKAYh0m9jM6y6qGH\nInQUvCGqlfwTve2vsGZZlsGBcqwL0OOLm8vX9XgHLFOMfOs9FSin/ASGvaJ7Fjzh\nadz+4aZ/yc4SPrLl6TeT47w24l6/kXxlIMebA/mRDQKBgQD622MP1ziFvB9KwsS2\nolnrajYr1P67bSBwqppS/S1oKsHpL9+xiuL5rlHQyB+BjcbTRx2NWVVGfcRegENc\ntpjOZKWUcohh/actXtlrpqjPZgBSa9T5lK8N5tu8ZIn5b38lBxvPNQAHT6vK/oxf\ntAECFv6P9zRt8QzwE1Guz/R3bQKBgQDGKXYMFtUpFmaPO4LEzvYaoAtE9xE9p4+Q\nVaBuEm6GHeO4ltJt03ZeC7bFrrSbAQkQeuM0ipDlOWFeoBOJPM5kTFV7uPnsZoEJ\nhdKQ4Kq9XkCmp9eoSfGnqFMDX9GCmUewJA4u25bhGZg/blE9kIgVxo5H1UTmQjeA\nf/1h1pZYywKBgFk1b5MQjG8yqUYi4WW5cpS/XqhTxIrOkfy/DsZ4do9WtULB3aD7\nrR/xl/LRWDLwQkacQawkmqjIzO52Wn48CTdMn32dBVcjpzIBSvx3dgzbTz4ATuq6\nr04YTQhAELj9p495abBUPsBa2tMDltPp5Xnix4BW/vQiBuHRXPj3xw45AoGABl+3\nCFSDrrqlud20KxhtGhYjxqgbydvl5kKa0m+NVosHlBxl0FqI6CWAT4N7E7FI1Vre\njAYY+waJdz224yctjFRYO46Lm2sAo4nGaBqR411wvuuPKD6Yo0fqw6UFXCoKAERo\noGE3zS3Bk+i8fDp15h1o3i6h9LYUivGS+N6qH1kCgYAR7wfuXwRJDEs6g+8by3Mg\nObGYJ2Ie+rlvsDdgai4yqfe/cwqPhAuTilu8QyNrhzp7lTyVc0t4bfhCjScVazOp\nN/+lR4FWOZZfyxR/d1Kcn+wCJyeEt71nExuSJiWq5J1tMcnmgQbyTL1HYhOBxlDo\niNOjalgTwcNlg9ChJPwEQA==\n-----END PRIVATE KEY-----\n",
-        #       "client_email": "firebase-adminsdk-fbsvc@haatke.iam.gserviceaccount.com",
-        #       "client_id": "117276035006319934087",
-        #       "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        #       "token_uri": "https://oauth2.googleapis.com/token",
-        #       "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        #       "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40haatke.iam.gserviceaccount.com",
-        #       "universe_domain": "googleapis.com"
-        #     }
+        #   repoToken: "${{ secrets.GITHUB_TOKEN }}"
+        #   firebaseServiceAccount: "1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4"
         #   channelId: live
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v4

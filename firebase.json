@@ -6,11 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "headers": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "**/*.@(js|css|json|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf)",
+        "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
       }
-    ]
+    ],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
   }
 }

@@ -9,7 +9,8 @@ module.exports = {
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[hash].js',
+    publicPath: '/'  // Ensure correct public path
   },
   devtool: 'inline-source-map',
   module: {
