@@ -34,14 +34,22 @@ jobs:
       - name: Verify Build Directory
         run: ls -la react/dist || echo "⚠️ react/dist directory not found!"
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: react/dist  # Deploy 'dist' contents to root of 'gh-pages'
-          keep_files: false  # Remove old files before deploying
-          force_orphan: true  # Overwrite all commits, keeping only the latest
 
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4"
+          channelId: live
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: react/dist  # Deploy 'dist' contents to root of 'gh-pages'
+      #     keep_files: false  # Remove old files before deploying
+      #     force_orphan: true  # Overwrite all commits, keeping only the latest
+
+# 1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4
           
       # # Deploy to InfinityFree via FTP
       # - name: Deploy to InfinityFree
