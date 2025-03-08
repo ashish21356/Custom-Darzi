@@ -52,6 +52,9 @@ jobs:
           }' > $HOME/firebase-key.json
         shell: bash
 
+      - name: Check JSON
+        run: echo $HOME/firebase-key.json
+
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
