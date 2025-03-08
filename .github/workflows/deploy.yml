@@ -35,28 +35,5 @@ jobs:
         run: ls -la dist || echo "⚠️ react/dist directory not found!"
 
       - name: Deploy to Firebase
-        run: npx firebase-tools deploy --only hosting --project haatke --token "1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4"
-        # uses: FirebaseExtended/action-hosting-deploy@v0
-        # with:
-        #   repoToken: "${{ secrets.GITHUB_TOKEN }}"
-        #   firebaseServiceAccount: "1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4"
-        #   channelId: live
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: react/dist  # Deploy 'dist' contents to root of 'gh-pages'
-      #     keep_files: false  # Remove old files before deploying
-      #     force_orphan: true  # Overwrite all commits, keeping only the latest
-
-# 1//0guFOO3Q4wkF8CgYIARAAGBASNwF-L9IrRs-B2B84xsKFrUPIJVRvsC9y0Ur3hw8hFCpJpwljRfY0aQeCDLIQR_Pat8WkNOm8Yn4
-          
-      # # Deploy to InfinityFree via FTP
-      # - name: Deploy to InfinityFree
-      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      #   with:
-      #     server: ftpupload.net
-      #     username: if0_38377025
-      #     password: Worldstar123
-      #     local-dir: ./react/dist/ # Make sure this matches your build output
-      #     server-dir: /htdocs/ # Path where you want to deploy in InfinityFree
+        run: npx firebase-tools deploy --only hosting --project haatke --token "${{ secrets.FIREBASE_AUTH_TOKEN }}"
+       

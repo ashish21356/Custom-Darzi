@@ -82,7 +82,7 @@ const ProductDetails = () => {
                                 {selectedProduct.price}
                             </Typography>
                             <Typography variant="body2" color="success" sx={{ my: 1 }}>
-                                Incl of all taxes*
+                                Incl of all taxes
                             </Typography>
 
                             {/* Size Selection */}
@@ -139,5 +139,7 @@ const ProductDetails = () => {
         </Box>
     );
 };
+
+
 
 export default ProductDetails;
