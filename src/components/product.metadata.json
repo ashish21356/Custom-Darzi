@@ -1,0 +1,48 @@
+{
+    
+    "products": [
+        {
+            "id": 1,
+            "name": "Wireless Headphones",
+            "price": 99.99,
+            "image": "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480"
+        },
+        {
+            "id": 2,
+            "name": "Smart Watch",
+            "price": 199.99,
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+        },
+        {
+            "id": 3,
+            "name": "Laptop Backpack",
+            "price": 49.99,
+            "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"
+        },
+        {
+            "id": 4,
+            "name": "Wireless Mouse",
+            "price": 29.99,
+            "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
+        },
+        {
+            "id": 5,
+            "name": "Smart Watch",
+            "price": 199.99,
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+        },
+        {
+            "id": 6,
+            "name": "Classic White T-Shirt",
+            "price": 599.99,
+            "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+            "images": [
+              "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+              "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500",
+              "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
+            ],
+            "sizes": [36,38,40,42],
+            "description": "Premium cotton t-shirt perfect for everyday wear. Comfortable fit and durable material."
+          }
+    ]
+}
