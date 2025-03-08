@@ -13,26 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # # Checkout the repository
+      # - name: Checkout repository
+      #   uses: actions/checkout@v3
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'  # Or your desired version of Node.js
+      # # Set up Node.js
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '20'  # Or your desired version of Node.js
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
+      # # Install dependencies
+      # - name: Install dependencies
+      #   run: npm install
 
-      # Build the project (e.g. React, Angular, etc.)
-      - name: Build project
-        run: npm run build
+      # # Build the project (e.g. React, Angular, etc.)
+      # - name: Build project
+      #   run: npm run build
 
-      - name: Verify Build Directory
-        run: ls -la dist || echo "⚠️ react/dist directory not found!"
+      # - name: Verify Build Directory
+      #   run: ls -la dist || echo "⚠️ react/dist directory not found!"
 
       # Authenticate Firebase CLI using Service Account JSON
       - name: Authenticate Firebase CLI
@@ -52,6 +52,7 @@ jobs:
         shell: bash
 
       - name: Deploy to Firebase
+        run: cat $HOME/firebase-key.json
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
