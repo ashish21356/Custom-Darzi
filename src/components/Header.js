@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+
 import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
 // import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 
-const Header = ({setRoute}) => {
+const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -21,7 +24,7 @@ const Header = ({setRoute}) => {
                 </IconButton>
                 
                 {/* Logo */}
-                <Typography onClick={() => setRoute('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
+                <Typography onClick={() => navigate('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
                     KurtaShop
                 </Typography>
 

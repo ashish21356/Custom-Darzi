@@ -1,4 +1,5 @@
 import React, { lazy, useRef } from "react";
+import {useNavigate} from 'react-router-dom';
 import { Box, Typography, Grid2 as Grid, Card, CardMedia, Container, IconButton } from "@mui/material";
 import Slider from "react-slick";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -6,7 +7,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import products from "../components/product.metadata.json";
 import ProductCard from "./common-components/Card";
 
-const Home = ({ setRoute }) => {
+const Home = () => {
+    const navigate = useNavigate();
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -44,7 +46,7 @@ const Home = ({ setRoute }) => {
             <Box sx={{ display: "flex", overflowX: "auto", gap: 2, pb: 2, justifyContent: { xs: "flex-start", md: "center" } }}>
                 {categories.map((category) => (
                     <Box key={category.name} sx={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
-                        <Card onClick={() => setRoute('/shop')} key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
+                        <Card onClick={() => navigate('/shop')} key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
                             <CardMedia component="img" image={category.image} alt={category.name} sx={{ opacity: '1', width: "100%", height: "100%", filter: "grayscale(50%) blur(2px)" }} />
                             <Typography variant="caption" sx={{ position: "absolute", top: '50%', textAlign: 'center', transform: 'translateX(0%)', color: "white", padding: "2px 5px", borderRadius: "5px", backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                                 {category.name}
@@ -61,9 +63,9 @@ const Home = ({ setRoute }) => {
 };
 
 const TopSelling = () => {
-    const topSelling = products.products.slice(0, 6); // More products for scrolling
+    const topSelling = products.slice(0, 6); // More products for scrolling
     const scrollRef = useRef(null);
-
+    
     const scrollLeft = () => {
         scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
     };

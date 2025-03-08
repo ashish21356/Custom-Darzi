@@ -12,6 +12,9 @@ module.exports = {
     filename: 'bundle.[hash].js',
     publicPath: '/'  // Ensure correct public path
   },
+  devServer: {
+    historyApiFallback: true, // Ensures index.html is served for all routes
+  },
   devtool: 'inline-source-map',
   module: {
     rules: [
