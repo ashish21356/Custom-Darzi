@@ -34,29 +34,11 @@ jobs:
       - name: Verify Build Directory
         run: ls -la dist || echo "⚠️ react/dist directory not found!"
 
-      # Authenticate Firebase CLI using Service Account JSON
-      - name: Authenticate Firebase CLI
-        run: |
-          echo '{
-            "type": "service_account",
-            "project_id": "haatke",
-            "private_key_id": "2800b2906cd424a0df086782986efba923c5dbac",
-            "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFRqSj5Q6Mw17J\nFNkQJ/FMygRJRNpF3yVT+ZVBCOwGdGCFoiiBrQ/zrO0nPIWQJMM61qCzmVtmhI23\nLU1KfZtj06LJp0p4EoqDt2SXxiGQd4avgOflwwYq4blry1Ku19HBvtt8mgFMclCK\nUzWWTw8Vzm25uyPXkCxqCuIwkbr23DOai60TfHe8gPV6+YJhgDcCTsqZagZcrBOj\nzaGZZcadZwW+OMcFD/+Pk8fj1N1eRS05wuvKAc/hZwlr5y5d4yx/tz5qh1k/QWgM\n277bhWtfmC+JUibhhekJlFun4ESko0HJ4TF63okFb0/blqlTupRyou9XnK2ag7l8\nWshCPr3FAgMBAAECggEAE3ZMMNUcsdtmYv0ZCwR9xD8b3CScSg9hLd8uD9vy+RIL\nIbPlPiHWNIqHXPsWDCnsTsY01XMYNs1186/W87XfmiIbabyE1sKxgpwZovWLgyaf\nlXnoptyuI5XgRpepARHOokgTfD/vR9zxQCxEWZ9UFCko3w1s1EvnbdDEDtmZsdfM\nH2uCrr/sTIm2ilIlASVygUkfWhaVOmppF+kZRIXDFcBebipl0JwqQ4Pn1yVEIYx4\nmG0SOoNIIjEsXGOnqd4prVY9BeIdWLsOcmKOZKogkL0m/PSzk9f+/eTNHg8ajp5d\n/5JRIMmvYkk6qX197hExaIcnchCxfLPjKG1++jEqAwKBgQDt/z+02DxjOrMiV9/7\njyOD1QiyBC9LlhkkCOvB2Z/3sv/8FYesF+4CMydHYMmHMMJiFn33HW9vcDR4QVmB\ndDzZkq+ie6CEcp01h5iL/g1KY8Yj4OAimkjfwc4GEhBlfhCIC3uh12mOJOn040Fu\nwxZeyli3rsI1NY2f41Fak4IHIwKBgQDUMtcpODynOh4ARhgbr8IYnAPtftdVjTw5\nGZkIShN4GoMQSiqF+HAYarsLP/x/WAgaeE/0/M9oAX0QAW8B17NKGKWO5ta1AsqE\nn2UZwNdnkRB6Pe2NE5B4DRVsp5nhLlYzSEXlrH3w/9DsjSTOue8Vk62pJjmJBz7X\nUs81Rbnp9wKBgQCakw6IYW0PMb/IzXQfCX+Sjxl/rTIekJUxj0238KVyFmMmEcG1\nZzFhYmHffSBG2sdVN7CGgCqxIRojBKaiaqFe2mOST2MYwuwSKUhNnCp7p0O4Z8SL\nFNPB6DjsPm1Bzdfk1DhvC951wMnnEHad/r0XwapPWoSuVGLwdo6PGoD4KwKBgDGJ\nKMc7lJUpMQW5VzlnXzUlfpk7igMztEJUInBX8pGQBtaPqbuaknhwufdXWZdUspeT\nTH8RYU2TQ2GwI/zXIMiEVmm0o5yf6SzqlMxdQyuvJpySxlivn4MW8tBpk7eIfKD+\nFysViFTxMxF1pYkIyLJNxjV9ceL2KQpVD4ANJehjAoGAVN6LAW/7Ytf2l3+y5UdD\naZ6OLRmiHX6+51LWlWsRvrVJW9sBg6Lk388pbtzfedAJ2t3iNfSRxGTepSwo62Uk\nAIaO2Hp7LqPg/hTRtOGPjoeub05y2AVvQNWOshvLA8BUGXfykcArDTewnTOz/GU+\nsKq1mGSDKosKSOAH4GyIHEM=\n-----END PRIVATE KEY-----\n",
-            "client_email": "firebase-adminsdk-fbsvc@haatke.iam.gserviceaccount.com",
-            "client_id": "117276035006319934087",
-            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-            "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40haatke.iam.gserviceaccount.com",
-            "universe_domain": "googleapis.com"
-          }' > $HOME/firebase-key.json
-        shell: bash
-
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: $HOME/firebase-key.json
+          firebaseServiceAccount: "${{secrets.FIREBASE_SERVICE_ACCOUNT}}"
           channelId: live
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v4
