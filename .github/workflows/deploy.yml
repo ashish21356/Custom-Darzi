@@ -34,11 +34,14 @@ jobs:
       - name: Verify Build Directory
         run: ls -la dist || echo "⚠️ react/dist directory not found!"
 
+      - name: Check JSON
+        run: cat "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{secrets.FIREBASE_SERVICE_ACCOUNT}}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           channelId: live
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v4
