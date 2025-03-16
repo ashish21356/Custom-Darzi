@@ -1,56 +1,272 @@
 [
-    {
-      "id": 1,
-      "name": "Premium Cotton Kurta",
-      "price": "₹1,499",
-      "images": [
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480",
-        "https://kisah.in/cdn/shop/files/KA-0863-5573-T303-03.jpg?v=1740653059&width=5000",
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480"
-      ],
-      "description": "This premium cotton kurta is designed for comfort and elegance. Perfect for festive occasions and casual wear.",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
-      "details": {
-        "material": "100% Cotton",
-        "washCare": "Machine Wash Cold",
-        "returnPolicy": "7-day return policy",
-        "shipping": "Free shipping on orders above ₹999"
-      }
+  {
+    "id": "28799742079672512",
+    "retailer_id": null,
+    "is_hidden": null,
+    "product_availability": "IN_STOCK",
+    "max_available": 99,
+    "name": "Freedow Calorena Large Checks Men's Full-Sleeve Shirt",
+    "description": "Step up your style game with the Freedom Calorena Large Checks Men's Full-Sleeve Shirt. Designed for the modern man, this shirt features a bold and stylish large checkered pattern, offering a perfect blend of comfort, durability, and sophistication. Whether for casual outings, office wear, or special occasions, this shirt ensures you look effortlessly stylish.",
+    "url": null,
+    "shimmed_url": null,
+    "currency": "INR",
+    "price": "550000",
+    "status_info": {
+      "can_appeal": null,
+      "status": "APPROVED"
     },
-    {
-      "id": 2,
-      "name": "Designer Embroidered Kurta",
-      "price": "₹2,199",
-      "images": [
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480",
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480",
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480"
-      ],
-      "description": "A beautifully embroidered kurta with intricate details. Made from premium fabric for a royal look.",
-      "sizes": ["M", "L", "XL"],
-      "details": {
-        "material": "Cotton Blend",
-        "washCare": "Hand Wash Only",
-        "returnPolicy": "7-day return policy",
-        "shipping": "Free shipping on orders above ₹999"
-      }
+    "sale_price": {
+      "price": "299000",
+      "start_date": null,
+      "end_date": null
     },
-    {
-      "id": 3,
-      "name": "Casual Linen Kurta",
-      "price": "₹999",
+    "media": {
       "images": [
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480",
-        "https://kisah.in/cdn/shop/files/KA-0994-5590-T301.jpg?crop=region&crop_height=1920&crop_left=76&crop_top=0&crop_width=1286&v=1740653159&width=480"
-      ],
-      "description": "Lightweight and breathable linen kurta for everyday wear. A must-have for summers.",
-      "sizes": ["S", "M", "L", "XL"],
-      "details": {
-        "material": "Linen",
-        "washCare": "Dry Clean Recommended",
-        "returnPolicy": "7-day return policy",
-        "shipping": "Free shipping on orders above ₹999"
-      }
+        {
+          "id": "613627794838417",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484139347_613627801505083_7276682849995762057_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=XbxO-mciokQQ7kNvgHgaqYu&_nc_oc=AdipcrDJwR702dDCPqz0YA3EF_O0nsSvmMxmLR8kDUW3hCzWwZpurHyJMH6IfLQCfj8&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaITXPKAY6Ps9PUG0VV6LU1BvSNQkDR6mAc5PPFC2Alt8f&oe=67DCC107",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484139347_613627801505083_7276682849995762057_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=XbxO-mciokQQ7kNvgHgaqYu&_nc_oc=AdipcrDJwR702dDCPqz0YA3EF_O0nsSvmMxmLR8kDUW3hCzWwZpurHyJMH6IfLQCfj8&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaISmEt0BwtMbUf-OUouvcH98qsc52dP2Ar1DuU0ecbw3l&oe=67DCC107"
+        },
+        {
+          "id": "3018627954945114",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484317290_3018627961611780_7777634445643438091_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=l2Sq4HEf6OkQ7kNvgEjjS_h&_nc_oc=Adj03dfFa0V65mJ0ljIkZ6oVgeP13c_IOGTsXo1e64ZZQiUYguTkFvldyLib09WkgBE&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaIWw417xuJwUcbQxY5m5dLBmFmj58dQ2NCvjbQPx2mn3-&oe=67DCAEA3",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484317290_3018627961611780_7777634445643438091_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=l2Sq4HEf6OkQ7kNvgEjjS_h&_nc_oc=Adj03dfFa0V65mJ0ljIkZ6oVgeP13c_IOGTsXo1e64ZZQiUYguTkFvldyLib09WkgBE&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaIQaAqI6GovTQc8cP9oO9FonR3lyMlAJNlojGHZV7kp7x&oe=67DCAEA3"
+        },
+        {
+          "id": "1082356247260369",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484560462_1082356250593702_4801550979695536487_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=Ala9uD-nB00Q7kNvgHLI0QV&_nc_oc=AdgR31nfUjOnveJgUAEPeHMQ1x6hTBTJXdePcClZfjy32ElBL-kdoKvoD1S0P0WnG60&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaIXrxl93RqEEpTy4IWJe8X98_aX_Av-UF6bA12HiXHiuy&oe=67DCC719",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484560462_1082356250593702_4801550979695536487_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=Ala9uD-nB00Q7kNvgHLI0QV&_nc_oc=AdgR31nfUjOnveJgUAEPeHMQ1x6hTBTJXdePcClZfjy32ElBL-kdoKvoD1S0P0WnG60&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=F0FsL2aYNLCXJYC-MQQEYw&oh=01_Q5AaIdCUMTJS25lPJPyPSppFiqj72Zsnw2_9DBxjWIA7Y9tb&oe=67DCC719"
+        }
+      ]
+    },
+    "belongs_to": null,
+    "compliance_category": null,
+    "compliance_info": {
+      "country_code_origin": "IN",
+      "importer_name": "",
+      "importer_address": null
     }
-  ]
-  
+  },
+  {
+    "id": "8931340876965715",
+    "retailer_id": null,
+    "is_hidden": null,
+    "product_availability": "IN_STOCK",
+    "max_available": 99,
+    "name": "Cadet blue men's full-sleeve shirt",
+    "description": "Upgrade your wardrobe with this stylish cadet blue men's full-sleeve shirt, perfect for both casual and formal occasions. Made from premium-quality fabric, it offers superior comfort, a sleek fit, and long-lasting durability.",
+    "url": null,
+    "shimmed_url": null,
+    "currency": "INR",
+    "price": "550000",
+    "status_info": {
+      "can_appeal": null,
+      "status": "APPROVED"
+    },
+    "sale_price": {
+      "price": "299000",
+      "start_date": null,
+      "end_date": null
+    },
+    "media": {
+      "images": [
+        {
+          "id": "1329184818123339",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484368965_1329184821456672_705687700814346117_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=EfLKe3hahs0Q7kNvgFnEGUv&_nc_oc=AdiQ6XldWatFn7oanS7ZnG6sQMBRqwduNSMS6p9NSW-sn_1X0VCRfUpxzC_xKCIyV0M&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIfCKoy6KxAE7hf7EugRH9TQg4WTXmeVZzBtprNnUDxlG&oe=67DCC020",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484368965_1329184821456672_705687700814346117_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=EfLKe3hahs0Q7kNvgFnEGUv&_nc_oc=AdiQ6XldWatFn7oanS7ZnG6sQMBRqwduNSMS6p9NSW-sn_1X0VCRfUpxzC_xKCIyV0M&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIc_8kcGem0IbkraOWcjaVuIoGCqAgKxw0__D9Z3ikOgY&oe=67DCC020"
+        },
+        {
+          "id": "646056441709091",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484653472_646056445042424_1727804269112443415_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=mAW_PqH9Cv0Q7kNvgG2YxSj&_nc_oc=AdhYHpRwzXVAwhcRtD1iyfmSvL-KNYkQrQSg4VZFW5ZlX-3krLZ-HJk5Fmd0RN6RKz8&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIa3HMXDnOAIb51NpCWclB1AOOnzBbV-basMLpPRKbvj3&oe=67DCDE85",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484653472_646056445042424_1727804269112443415_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=mAW_PqH9Cv0Q7kNvgG2YxSj&_nc_oc=AdhYHpRwzXVAwhcRtD1iyfmSvL-KNYkQrQSg4VZFW5ZlX-3krLZ-HJk5Fmd0RN6RKz8&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIZZkrdSv-VAy-CV1cy9oQ3k2AexaZdQoPYV0pHSdWeIM&oe=67DCDE85"
+        },
+        {
+          "id": "4025182771135173",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484470722_4025182777801839_2901500198389653030_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=5CCZ6S4GguwQ7kNvgE2V1eT&_nc_oc=AdgopZyoQHgkuKhTly0sDeaUx51GjhkjR4flAk0yzDq9GJWSfagjE2gd1D29VX4uZvs&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIRK77j0RAomOPs-UIBIB0pLXchPaahnZ1e_mgcW69wIX&oe=67DCCAE6",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484470722_4025182777801839_2901500198389653030_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=5CCZ6S4GguwQ7kNvgE2V1eT&_nc_oc=AdgopZyoQHgkuKhTly0sDeaUx51GjhkjR4flAk0yzDq9GJWSfagjE2gd1D29VX4uZvs&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIXu-R4xrWevdX2Ase-1Ae1PSJVej-dvCBSrN5OHxcjyH&oe=67DCCAE6"
+        },
+        {
+          "id": "975455741440037",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484570784_975455744773370_6224060599467967766_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=IPNnv9nh6bwQ7kNvgGQjPgP&_nc_oc=Adjwj3Dbg5XDefpBXyG5CvU7YWGzjibtL5fXzK6fTzRDIy-J5fxC41MxH-jxkKKB9aU&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIcPGz4Rr6xopY4RGJ3xT0pNd66Pbn8GBa9N6Zzedt2z1&oe=67DCBEBA",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484570784_975455744773370_6224060599467967766_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=IPNnv9nh6bwQ7kNvgGQjPgP&_nc_oc=Adjwj3Dbg5XDefpBXyG5CvU7YWGzjibtL5fXzK6fTzRDIy-J5fxC41MxH-jxkKKB9aU&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIQtSFbX4uKCBb8H4jypHLVfE0JvTIXnN1qJ6iQcfbfwv&oe=67DCBEBA"
+        },
+        {
+          "id": "573167789075105",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484812466_573167792408438_8234462656484538713_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=II4_TCC4ZdgQ7kNvgFn00Ym&_nc_oc=AdjGJVLYMTxTzHWEEGLDDRJpDfR8eiDjaFUq45IcX_mWAPtRSpAsCbOrg-HBknOvXaI&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIfh5TpPPUVL4zlp4hAVZ1FJaWWKfxk-TxVen9mMbi_mV&oe=67DCDDF4",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484812466_573167792408438_8234462656484538713_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=II4_TCC4ZdgQ7kNvgFn00Ym&_nc_oc=AdjGJVLYMTxTzHWEEGLDDRJpDfR8eiDjaFUq45IcX_mWAPtRSpAsCbOrg-HBknOvXaI&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=u-Br_KAuvaPwjMVwJcx6bg&oh=01_Q5AaIfLhM-b0pWyJm647ZbEhewql9m8AzI76HIxJjzvpqCXo&oe=67DCDDF4"
+        }
+      ]
+    },
+    "belongs_to": null,
+    "compliance_category": null,
+    "compliance_info": {
+      "country_code_origin": "IN",
+      "importer_name": "",
+      "importer_address": null
+    }
+  },
+  {
+    "id": "9476896412369063",
+    "retailer_id": null,
+    "is_hidden": null,
+    "product_availability": "IN_STOCK",
+    "max_available": 99,
+    "name": "Freedow black and white design full-sleeve shirt",
+    "description": "Make a bold style statement with this Freedom black and white design full-sleeve shirt. Designed for comfort and elegance, this shirt is perfect for both casual outings and formal occasions. Its premium-quality fabric ensures breathability, durability, and all-day comfort.",
+    "url": null,
+    "shimmed_url": null,
+    "currency": "INR",
+    "price": "550000",
+    "status_info": {
+      "can_appeal": null,
+      "status": "APPROVED"
+    },
+    "sale_price": {
+      "price": "299000",
+      "start_date": null,
+      "end_date": null
+    },
+    "media": {
+      "images": [
+        {
+          "id": "1785319685651405",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484315708_1785319688984738_8962906566289603260_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=9D3EPvrVgHsQ7kNvgHaCUWq&_nc_oc=Adif4iaIi-AR5jECDOpdtlQSP4F0QvH8Yxn4BEm9EmZeLEIRwjpW97WNpQGEzEMRXEo&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIc6n5A5UnQV8P4gHFVzdmVpB1nxt3rXwH0Orm02C0lJu&oe=67DCB5CF",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484315708_1785319688984738_8962906566289603260_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=9D3EPvrVgHsQ7kNvgHaCUWq&_nc_oc=Adif4iaIi-AR5jECDOpdtlQSP4F0QvH8Yxn4BEm9EmZeLEIRwjpW97WNpQGEzEMRXEo&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIath6mJrCnTu_ObRzmLLj7T0IMbDo82rYSuiAQ-6hIOO&oe=67DCB5CF"
+        },
+        {
+          "id": "663680986125924",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484585197_663680989459257_2840909787637903052_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=pyp6-0WI3vgQ7kNvgH8bj5K&_nc_oc=AdgCOAambR-BF-8Iix7K1LhK8ZLfqyUREkPfaysoeu9EfpoT-VQ2asLzAy5EX0RkeUg&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIUI7s80W-bReywfq5HlKb-K_hA8dOfyNsr4IPIEJnrA6&oe=67DCCA9A",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484585197_663680989459257_2840909787637903052_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=pyp6-0WI3vgQ7kNvgH8bj5K&_nc_oc=AdgCOAambR-BF-8Iix7K1LhK8ZLfqyUREkPfaysoeu9EfpoT-VQ2asLzAy5EX0RkeUg&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaITp9AZnelvWro-EDIdldzC0_1ULjMd7UryX9Mts8iR6L&oe=67DCCA9A"
+        },
+        {
+          "id": "995696089162997",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484896861_995696092496330_7404750566314903367_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=ZDd4v1i-4bwQ7kNvgEE7iAq&_nc_oc=Adh1mx1j-wiG2g5AmP1P6mfFBo2RK-xP4mLw4D7l_ldH2FSQXedZcZ96V6fNMuKBais&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIcCvizf6C4xUm0_WTdYIWo1716ncVzpEIIbLhLCEYBFO&oe=67DCC12A",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484896861_995696092496330_7404750566314903367_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=ZDd4v1i-4bwQ7kNvgEE7iAq&_nc_oc=Adh1mx1j-wiG2g5AmP1P6mfFBo2RK-xP4mLw4D7l_ldH2FSQXedZcZ96V6fNMuKBais&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIcWKD7Gd_UErX4yXXSVmdD2ifX80DrmlOKdJbJtj4Nuf&oe=67DCC12A"
+        },
+        {
+          "id": "653314734313383",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484588707_653314740980049_8819292797011256643_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=PIVsk7Y3434Q7kNvgH1GDD3&_nc_oc=AdhW6Lwc9YRG_o9i5R6ksXtlrDzc0V5JP9XLL3V7MxwaMeuLdLIFU6vhuIn6RXQbG-o&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIVAXKDpNm6bRi6wKJZ3pL4w7I1anjc5uwAwH5LwqZKcB&oe=67DCBAB8",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484588707_653314740980049_8819292797011256643_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=PIVsk7Y3434Q7kNvgH1GDD3&_nc_oc=AdhW6Lwc9YRG_o9i5R6ksXtlrDzc0V5JP9XLL3V7MxwaMeuLdLIFU6vhuIn6RXQbG-o&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=ulp41z_4gRcwndiebN1o_g&oh=01_Q5AaIUlF8Kbv7lJbt-Rfk6yptqUWTq7fsyxID2igceGS4e28&oe=67DCBAB8"
+        }
+      ]
+    },
+    "belongs_to": null,
+    "compliance_category": null,
+    "compliance_info": {
+      "country_code_origin": "IN",
+      "importer_name": "",
+      "importer_address": null
+    }
+  },
+  {
+    "id": "28674585115523362",
+    "retailer_id": null,
+    "is_hidden": null,
+    "product_availability": "IN_STOCK",
+    "max_available": 99,
+    "name": "Freedow Red Large Checks Men's Full-Sleeve Shirt",
+    "description": "Upgrade your wardrobe with this stylish Freedom Red Large Checks Men's Full-Sleeve Shirt. Designed for the modern man, this shirt blends classic charm with contemporary fashion, making it perfect for both casual and semi-formal occasions. The premium fabric ensures breathability and comfort, while the bold checkered pattern adds a striking appeal.",
+    "url": null,
+    "shimmed_url": null,
+    "currency": "INR",
+    "price": "550000",
+    "status_info": {
+      "can_appeal": null,
+      "status": "APPROVED"
+    },
+    "sale_price": {
+      "price": "299000",
+      "start_date": null,
+      "end_date": null
+    },
+    "media": {
+      "images": [
+        {
+          "id": "1473409570703215",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484532920_1473409574036548_6638027716130271580_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=R1iztNX6vPEQ7kNvgFMd_GW&_nc_oc=Adg-8wofCmJRzcWXbqKQawE8LP3to_ZgT_3QUhnLNwMqJNq1-847EFt8UddjgBVzG78&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIQnMJsP2ORyN4Z1GpA1PX0XZSc1yvTFoSIrDhhMyI4BF&oe=67DCB510",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484532920_1473409574036548_6638027716130271580_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=R1iztNX6vPEQ7kNvgFMd_GW&_nc_oc=Adg-8wofCmJRzcWXbqKQawE8LP3to_ZgT_3QUhnLNwMqJNq1-847EFt8UddjgBVzG78&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIbxyRXdmGGb8wfv-dyPpnctFWgoaXNuxMTHNGHh471yS&oe=67DCB510"
+        },
+        {
+          "id": "1442017800109161",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484514084_1442017803442494_5157580652103621853_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=xg4xEBpIa3UQ7kNvgE20ciP&_nc_oc=AdhjTeL8FC13_XdqGU0nmrWUvkIPcK1WC-MY4477Jx-Dofxc3GHzRDjddxNfE-QSguk&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIXZfro62FMxTsbWfXeBNhR_SmKCW6cLFEgkJRoVKfsN-&oe=67DCB8C8",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484514084_1442017803442494_5157580652103621853_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=xg4xEBpIa3UQ7kNvgE20ciP&_nc_oc=AdhjTeL8FC13_XdqGU0nmrWUvkIPcK1WC-MY4477Jx-Dofxc3GHzRDjddxNfE-QSguk&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIbdvYS4bC5_kugzLVp2D_Eh_hbw766v4nRkUia_iLmhd&oe=67DCB8C8"
+        },
+        {
+          "id": "8696234233810560",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484293990_8696234240477226_1097671920177038480_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=ofmvuVci_j4Q7kNvgGX8-MA&_nc_oc=AdhmthcAZYXipFb8YAIjSp2ASMgsRviUriDRlcelCoKAJzEjpjGV335RhePni-FydAE&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIc444_4umDgO5_Omx_SsI_r9K896yFaoFNbK1JJESnwg&oe=67DCC8B8",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484293990_8696234240477226_1097671920177038480_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=ofmvuVci_j4Q7kNvgGX8-MA&_nc_oc=AdhmthcAZYXipFb8YAIjSp2ASMgsRviUriDRlcelCoKAJzEjpjGV335RhePni-FydAE&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIc28RGa-cFAA0043Ph4U4IFN3tYQo4dX-8_9uRjxU9yl&oe=67DCC8B8"
+        },
+        {
+          "id": "1173110457643677",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484513727_1173110460977010_6775613521192119375_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=sYZJsGHw1WAQ7kNvgFpQ6bM&_nc_oc=AdhOyhIGdgQJP5_6lkf09XnL6xBp5VdCpXyjwClifCVeEMdbwLEYINSc-zVR1KXqnVg&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIZLe7tL9tWr71lndS2Wy9OcS_z2238mUr45B396KhS3k&oe=67DCB890",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484513727_1173110460977010_6775613521192119375_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=sYZJsGHw1WAQ7kNvgFpQ6bM&_nc_oc=AdhOyhIGdgQJP5_6lkf09XnL6xBp5VdCpXyjwClifCVeEMdbwLEYINSc-zVR1KXqnVg&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIeoHx_pE9TWVD4lgYLu9fGdK3cb8veU6bDyqxu5hiAmf&oe=67DCB890"
+        },
+        {
+          "id": "1156643092598588",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484337343_1156643099265254_4067426858537115493_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=Uzp2Ykm5_VIQ7kNvgFNao25&_nc_oc=AdhdvWt-EB0x3h3ONkvkuk81pd6hFx-JauLFF74Ge-34vB6U6vt12pLHv3cNAzLlS-Q&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIUqJOaXk_41LgPdwtyOt5XE2Tzh-flnG6BgZNlXIIR6L&oe=67DCC296",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484337343_1156643099265254_4067426858537115493_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=Uzp2Ykm5_VIQ7kNvgFNao25&_nc_oc=AdhdvWt-EB0x3h3ONkvkuk81pd6hFx-JauLFF74Ge-34vB6U6vt12pLHv3cNAzLlS-Q&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=m284vB8XkDO0XteZ3-1QWg&oh=01_Q5AaIYdQTvLUU_POoE1q23-6cL4TO8NhX7doFp2N4l3sQ-p7&oe=67DCC296"
+        }
+      ]
+    },
+    "belongs_to": null,
+    "compliance_category": null,
+    "compliance_info": {
+      "country_code_origin": "IN",
+      "importer_name": "",
+      "importer_address": null
+    }
+  },
+  {
+    "id": "24087689277487807",
+    "retailer_id": null,
+    "is_hidden": null,
+    "product_availability": "IN_STOCK",
+    "max_available": 99,
+    "name": "Freedow Olympic Large Checks Men's Full-Sleeve Shirt",
+    "description": "Freedow Olympic Large Checks Men's Full-Sleeve Shirt, designed for men who love a blend of classic and contemporary fashion. Featuring a bold checkered pattern, this shirt offers comfort, durability, and effortless style, making it perfect for both casual and semi-formal occasions.",
+    "url": null,
+    "shimmed_url": null,
+    "currency": "INR",
+    "price": "550000",
+    "status_info": {
+      "can_appeal": null,
+      "status": "APPROVED"
+    },
+    "sale_price": {
+      "price": "299000",
+      "start_date": null,
+      "end_date": null
+    },
+    "media": {
+      "images": [
+        {
+          "id": "669199032274164",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484619981_669199035607497_147295953421869457_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=NpTaqY2yZlQQ7kNvgERuNt_&_nc_oc=Adhgr2kYEHM31bUU9glreOw6YO_y-k-MrHj-P66BllPRCrzqt5D4aY7wtlup6uTc5DQ&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIf2pfHEKSHL_09t96G7kayjVvwk0RT2_8IiI-H-mKTND&oe=67DCCE90",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484619981_669199035607497_147295953421869457_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=NpTaqY2yZlQQ7kNvgERuNt_&_nc_oc=Adhgr2kYEHM31bUU9glreOw6YO_y-k-MrHj-P66BllPRCrzqt5D4aY7wtlup6uTc5DQ&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaITDQ3wB_kSXK52wuXpQplbnN2Kgeyz87D7y3xJ2Su6CW&oe=67DCCE90"
+        },
+        {
+          "id": "624580547018409",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484531006_624580550351742_5859657103862655823_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=D9J2F3Je8LoQ7kNvgFJAIx2&_nc_oc=AdjEiFsyngdTe3DYWxN--fNFS_OLzxMmEuOFYcEIGCBCx-aXD6b7HuZCWFKbumfEuVw&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIQKX59-77AS1XEpJJ7Q6au_6zA1Aqmps5bl331wrAIwR&oe=67DCD315",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484531006_624580550351742_5859657103862655823_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=D9J2F3Je8LoQ7kNvgFJAIx2&_nc_oc=AdjEiFsyngdTe3DYWxN--fNFS_OLzxMmEuOFYcEIGCBCx-aXD6b7HuZCWFKbumfEuVw&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIaLt5on6zbWUgrKr154nahCdldW1G0K55Wk0VlBnhFFB&oe=67DCD315"
+        },
+        {
+          "id": "1376746020017431",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484557752_1376746023350764_7558678612276018162_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=UOK2DXc8IIIQ7kNvgHolwY8&_nc_oc=AdgXrs8Q8cvN9Cwdg9o20RIpTHFx-As-5nHcRvkiGMuSMilEKZJWW7PgAk3qQg4Xw7o&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIeVjO8NWBTmgR9YS7_rPUgiAJss9IlwM2ayfXLmvpMMa&oe=67DCB3CA",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484557752_1376746023350764_7558678612276018162_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=UOK2DXc8IIIQ7kNvgHolwY8&_nc_oc=AdgXrs8Q8cvN9Cwdg9o20RIpTHFx-As-5nHcRvkiGMuSMilEKZJWW7PgAk3qQg4Xw7o&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIdSuGk30LXC4t8KwebJrhpE0nHdO6Q6a0riXC7KcnwBq&oe=67DCB3CA"
+        },
+        {
+          "id": "1389448972058461",
+          "original_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484336165_1389448978725127_3917813817919943864_n.jpg?ccb=1-7&_nc_sid=657aed&_nc_ohc=ODAYwZDygMAQ7kNvgFI2cQR&_nc_oc=AdjeTYehnbV8gGuyszq6q9GLtV1dPofdcyA0VO-7HceILIL9yLOWNyKzi6n2n2_BEbo&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIZe1wifpkDenwgeBF-OPOZv6WFOCeOhsZbngNZBI-2vN&oe=67DCE148",
+          "request_image_url": "https://mmg.whatsapp.net/v/t45.5328-4/484336165_1389448978725127_3917813817919943864_n.jpg?stp=dst-jpg_p100x100_tt6&ccb=1-7&_nc_sid=657aed&_nc_ohc=ODAYwZDygMAQ7kNvgFI2cQR&_nc_oc=AdjeTYehnbV8gGuyszq6q9GLtV1dPofdcyA0VO-7HceILIL9yLOWNyKzi6n2n2_BEbo&_nc_zt=23&_nc_ht=mmg.whatsapp.net&_nc_gid=_rDqkF3xVbMVdD3Zt_94Ng&oh=01_Q5AaIXnreEVrHP5JHgTl_4niLtiCiHdd4J0yFg1LAGALVHvq&oe=67DCE148"
+        }
+      ]
+    },
+    "belongs_to": null,
+    "compliance_category": null,
+    "compliance_info": {
+      "country_code_origin": "IN",
+      "importer_name": "",
+      "importer_address": null
+    }
+  }
+]

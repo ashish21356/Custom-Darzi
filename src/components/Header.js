@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
-import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText, Icon } from "@mui/material";
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Toolbar, Typography, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
+// import logo from '../assets/Shiirt-wala_logo.png';
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -27,7 +25,7 @@ const Header = () => {
                 
                 {/* Logo */}
                 <Box width={100} height={100}>
-                    <img src="/assets/Shiirt-wala_logo.png" alt="Logo" style={{ width: '100%', height: '100%' }} />
+                    <img onClick={() => navigate('/')} src={'https://s6.imgcdn.dev/YjM48D.png'} alt="Logo" style={{ width: '100%', height: '100%' }} />
                     {/* <Typography onClick={() => navigate('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
                         Kurta-wala
                     </Typography> */}
