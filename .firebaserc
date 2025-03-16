@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "haatke"
-  }
+  },
+  "targets": {
+    "haatke": {
+      "hosting": {
+        "myKurtaTarget": [
+          "kurtawala"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
