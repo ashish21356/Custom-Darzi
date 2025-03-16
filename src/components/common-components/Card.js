@@ -6,7 +6,7 @@ export default ({ product }) => {
     return (
         <Fragment>
             {/* <Link to={`/shop/${product.id}`}> */}
-            <Link to={'https://wa.me/p/28799742079672512/917047626500'} target="_blank">
+            <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank">
                 <CardMedia sx={{ height: "auto" }} component="img" height="150" image={product.media.images[0].original_image_url} alt={product.name} />
             </Link>
             <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
