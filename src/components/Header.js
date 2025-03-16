@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import { AppBar, Toolbar, Typography, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText, Icon } from "@mui/material";
 // import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
@@ -13,20 +13,25 @@ const Header = () => {
         setMobileOpen(!mobileOpen);
     };
 
-    const navItems = ["Home", "Men", "Women", "New Arrivals", "Contact"];
+    const navItems = [
+        // "Home", "Men", "Women", "New Arrivals", "Contact"
+    ];
 
     return (
         <AppBar position="static" sx={{ backgroundColor: "white", boxShadow: 1 }}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                {/* Mobile Menu Button */}
+                {/* Mobile Menu Button
                 <IconButton edge="start" sx={{ display: { xs: "block", md: "none" } }} onClick={handleDrawerToggle}>
                     <MenuIcon sx={{ color: "black" }} />
-                </IconButton>
+                </IconButton> */}
                 
                 {/* Logo */}
-                <Typography onClick={() => navigate('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
-                    KurtaShop
-                </Typography>
+                <Box width={100} height={100}>
+                    <img src="/assets/Shiirt-wala_logo.png" alt="Logo" style={{ width: '100%', height: '100%' }} />
+                    {/* <Typography onClick={() => navigate('/')} variant="h6" sx={{ color: "black", fontWeight: "bold", flexGrow: { xs: 1, md: 0 } }}>
+                        Kurta-wala
+                    </Typography> */}
+                </Box>
 
                 {/* Navigation (Hidden on mobile) */}
                 <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
