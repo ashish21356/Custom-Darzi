@@ -13,7 +13,7 @@ export default ({ product }) => {
             </Link>
             <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
                 <Typography variant="body1">{product.name}</Typography>
-                <Typography variant="body2" color="textSecondary">₹{product.price / 1000}</Typography>
+                <Typography variant="body2" color="textSecondary">₹{(product.sale_price.price || product.price) / 1000}</Typography>
             </CardContent>
             {/* <CardActions sx={{textAlign: 'center', justifyContent: 'center'}}>
                 <Button variant="contained" sx={{ mt: 1, backgroundColor: "black", color: "white" }}>Buy Now</Button>
