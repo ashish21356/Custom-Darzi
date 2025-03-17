@@ -31,7 +31,7 @@ const Footer = () => {
                         <Typography variant="h6" gutterBottom>
                             Contact Us
                         </Typography>
-                        <Typography variant="body2" color="textSecondary">Email: enquiry.kurtawala@gmail.com</Typography>
+                        <Typography variant="body2" color="textSecondary">Email: enquiry.shirtwala@gmail.com</Typography>
                         <Typography variant="body2" color="textSecondary">Phone: +91 70476 26500</Typography>
                     </Grid>
                 </Grid>
