@@ -6,7 +6,10 @@ import ProductCard from "./common-components/Card";
 
 const Body = () => {
     return (
-       
+<>
+         <Grid item xs={12}>
+        <h1 className="text-4xl font-bold text-center text-blue-600">Our New Products</h1>
+    </Grid>
 
         <Grid container spacing={2} justifyContent={{ md: "center" }} sx={{ padding: { xs: 1, sm: 3 } }}>
            
@@ -18,6 +21,7 @@ const Body = () => {
                 </Grid>
             ))}
         </Grid>
+                </>
     );
 };
 
