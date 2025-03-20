@@ -6,6 +6,8 @@ import ProductCard from "./common-components/Card";
 
 const Body = () => {
     return (
+        <h1 class="text-4xl font-bold text-center text-blue-600">Our New Products</h1>
+
         <Grid container spacing={2} justifyContent={{ md: "center" }} sx={{ padding: { xs: 1, sm: 3 } }}>
             {products.map((product) => (
                 <Grid item key={product.id} xs={6} sm={6} md={2}>
