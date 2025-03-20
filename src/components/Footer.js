@@ -12,7 +12,7 @@ const Footer = () => {
                             About Us
                         </Typography>
                         <Typography variant="body2" color="textSecondary">
-                            We offer a wide range of premium quality Kurtas that blend tradition with modern styles.
+                            We offer a wide range of premium quality Shirts, Kurtas, Pyjama that blend tradition with modern styles.
                         </Typography>
                     </Grid>
 
