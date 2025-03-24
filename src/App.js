@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Grid2, Skeleton } from '@mui/material';
+import { Box, Grid2, Skeleton } from '@mui/material';
 
 const Body = lazy(() => import('./components/Body'));
 const Home = lazy(() => import('./components/Home'));
@@ -28,6 +28,7 @@ const App = () => {
     <React.Fragment>
       <BrowserRouter>
       <Header />
+      <Box sx={{paddingTop: '64px'}}>
         <Routes>
           <Route path='/' element={
             <Suspense fallback={<ShimmerCards />}>
@@ -46,6 +47,7 @@ const App = () => {
             </Suspense>
           } />
         </Routes>
+      </Box>
       </BrowserRouter>
       <Footer />
     </React.Fragment>
