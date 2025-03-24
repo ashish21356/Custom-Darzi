@@ -48,7 +48,7 @@ const ProductImage = memo(({ product }) => {
                             component="img"
                             height="150"
                             onLoad={() => setLoaded(true)}
-                            image={BASE_URL + product.media.images[0].original_image_url}
+                            image={images[activeStep]}
                             alt={product.name}
                         />
                     </Skeleton> :
