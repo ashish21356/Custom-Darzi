@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton } from '@mui/material';
+import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, useMediaQuery } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -8,69 +8,92 @@ const BASE_URL = 'https://mmg.whatsapp.net/v/t45.5328-4';
 const ProductImage = ({ product }) => {
     const [activeStep, setActiveStep] = useState(0);
     const images = product.media.images.map(img => BASE_URL + img.original_image_url);
-  
+
+    const isDesktop = useMediaQuery("(min-width:600px)");
+
+    // Swipe handling
+    let touchStartX = 0;
+
+    const handleTouchStart = (e) => {
+        touchStartX = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+        const touchEndX = e.touches[0].clientX;
+        const difference = touchStartX - touchEndX;
+
+        if (difference > 50) {
+            handleNext(); // Swipe left
+        } else if (difference < -50) {
+            handleBack(); // Swipe right
+        }
+    };
+
     const handleNext = () => {
-      setActiveStep((prevStep) => (prevStep < images.length - 1 ? prevStep + 1 : 0));
+        setActiveStep((prevStep) => (prevStep < images.length - 1 ? prevStep + 1 : 0));
     };
-  
+
     const handleBack = () => {
-      setActiveStep((prevStep) => (prevStep > 0 ? prevStep - 1 : images.length - 1));
+        setActiveStep((prevStep) => (prevStep > 0 ? prevStep - 1 : images.length - 1));
     };
-  
+
     return (
-      <Box sx={{ width: "100%", position: "relative" }}>
-        {/* Image Display */}
-        <CardMedia
-          component="img"
-          image={images[activeStep]}
-          alt={`Product Image ${activeStep + 1}`}
-          sx={{ height: "120", }}
-        //   sx={{ width: "100%", height: "150px", objectFit: "cover" }}
-        />
-  
-        {/* Navigation Buttons */}
-        <MobileStepper
-          steps={images.length}
-          position="static"
-          activeStep={activeStep}
-        //   nextButton={
-        //     <Button size="small" onClick={handleNext}>
-        //       <KeyboardArrowRight />
-        //     </Button>
-        //   }
-        //   backButton={
-        //     <Button size="small" onClick={handleBack}>
-        //       <KeyboardArrowLeft />
-        //     </Button>
-        //   }
-          sx={{
-            background: "transparent",
-            justifyContent: "center",
-            padding: "8px",
-            mt: 1,
-          }}
-        />
-      </Box>
+        <Box sx={{ width: "100%", position: "relative" }}>
+            {/* Image Display */}
+            <CardMedia
+                component="img"
+                image={images[activeStep]}
+                alt={`Product Image ${activeStep + 1}`}
+                sx={{ height: "120", }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+            //   sx={{ width: "100%", height: "150px", objectFit: "cover" }}
+            />
+
+            {/* Navigation Buttons */}
+            <MobileStepper
+                steps={images.length}
+                position="static"
+                activeStep={activeStep}
+                  nextButton={
+                    isDesktop &&
+                    <Button size="small" onClick={handleNext}>
+                      <KeyboardArrowRight />
+                    </Button>
+                  }
+                  backButton={ isDesktop &&
+                    <Button size="small" onClick={handleBack}>
+                      <KeyboardArrowLeft />
+                    </Button>
+                  }
+                sx={{
+                    background: "transparent",
+                    justifyContent: "center",
+                    padding: "8px",
+                    mt: 1,
+                }}
+            />
+        </Box>
     );
-  };
+};
 
 export default ({ product }) => {
     const [loaded, setLoaded] = useState(false);
-    
+
     return (
         <Fragment>
             {/* <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank"> */}
-                {!loaded ? <Skeleton variant="rectangular" width="100%" height={150}>
-                    <CardMedia
-                        sx={{ height: "auto", objectFit: "cover" }}
-                        component="img"
-                        height="150"
-                        onLoad={() => setLoaded(true)}
-                        image={BASE_URL + product.media.images[0].original_image_url}
-                        alt={product.name}
-                    />
-                </Skeleton> :
-                    <ProductImage product={product} />}
+            {!loaded ? <Skeleton variant="rectangular" width="100%" height={150}>
+                <CardMedia
+                    sx={{ height: "auto", objectFit: "cover" }}
+                    component="img"
+                    height="150"
+                    onLoad={() => setLoaded(true)}
+                    image={BASE_URL + product.media.images[0].original_image_url}
+                    alt={product.name}
+                />
+            </Skeleton> :
+                <ProductImage product={product} />}
             {/* </Link> */}
             <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
                 <Typography variant="body1">{product.name}</Typography>
