@@ -57,9 +57,10 @@ const ProductImage = memo(({ product }) => {
                         image={images[activeStep]}
                         alt={`Product Image ${activeStep + 1}`}
                         sx={{
+                            alignContent:"center",
                             height: "250px", // Fixed height
                             width: "100%",
-                            objectFit: "contain", // Ensures image scales without distortion
+                            objectFit: "cover", // Ensures image scales without distortion
                             backgroundColor: "#f5f5f5", // Adds a background to fill empty spaces
                         }}
                         onLoad={() => setLoaded(true)}

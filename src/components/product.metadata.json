@@ -10,7 +10,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "kurta",
         "image_fetch_status": null,
         "price": "650000",
         "currency": "INR",
@@ -70,7 +70,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "kurta",
         "image_fetch_status": null,
         "price": "650000",
         "currency": "INR",
@@ -139,7 +139,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "ather",
         "image_fetch_status": null,
         "price": "549000",
         "currency": "INR",
@@ -181,7 +181,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -241,7 +241,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -301,7 +301,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -361,7 +361,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -421,7 +421,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -481,7 +481,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "shirt",
         "image_fetch_status": null,
         "price": "550000",
         "currency": "INR",
@@ -541,7 +541,7 @@
             "reject_reason": null,
             "status": "APPROVED"
         },
-        "belongs_to": null,
+        "belongs_to": "apent",
         "image_fetch_status": null,
         "price": "200000",
         "currency": "INR",

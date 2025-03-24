@@ -32,7 +32,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={
             <Suspense fallback={<ShimmerCards />}>
-              <Body />
+              <Home />
               {/* <ShimmerCards /> */}
             </Suspense>
           } />
