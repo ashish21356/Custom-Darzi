@@ -43,7 +43,7 @@ const Home = () => {
 
             {/* Categories Section */}
             <Typography variant="h5" sx={{ mt: 4, mb: 2, textAlign: "center" }}>Shop by Category</Typography>
-            <Box sx={{ display: "flex", overflowX: "auto", gap: 2, pb: 2, justifyContent: { xs: "flex-start", md: "center" } }}>
+            <Box sx={{ display: "flex", overflowX: "auto", gap: 2, pb: 2, justifyContent: { xs: "center", md: "center" } }}>
                 {categories.map((category) => (
                     <Box key={category.name} sx={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
                         <Card onClick={() => navigate('/shop?category=' + category.type)} key={category.name} sx={{ borderRadius: "50%", overflow: "hidden", width: 150, height: 150, minWidth: 100, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 3, position: "relative" }}>
