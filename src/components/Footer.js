@@ -17,14 +17,14 @@ const Footer = () => {
                     </Grid>
 
                     {/* Quick Links */}
-                    <Grid item xs={12} sm={4}>
+                    {/* <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom>
                             Quick Links
                         </Typography>
                         <Link href="#" color="inherit" display="block" underline="hover">Home</Link>
                         <Link href="#" color="inherit" display="block" underline="hover">Shop</Link>
                         <Link href="#" color="inherit" display="block" underline="hover">Contact</Link>
-                    </Grid>
+                    </Grid> */}
 
                     {/* Contact Section */}
                     <Grid item xs={12} sm={4}>

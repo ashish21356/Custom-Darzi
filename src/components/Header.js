@@ -16,7 +16,7 @@ const Header = () => {
     ];
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "white", boxShadow: 1 }}>
+        <AppBar position="fixed" sx={{ backgroundColor: "white", boxShadow: 1, minHeight: 2 }}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 {/* Mobile Menu Button
                 <IconButton edge="start" sx={{ display: { xs: "block", md: "none" } }} onClick={handleDrawerToggle}>
