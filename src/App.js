@@ -12,10 +12,13 @@ const ProductDetails = lazy(() => import('./components/ProductDetails'));
 
 const ShimmerCards = () => {
   return (
-    <Grid2 container spacing={2} direction={"row"}>
-      <Skeleton variant="rectangular" width={150} height={250} />
-      <Skeleton variant="rectangular" width={150}  height={250} />
-      <Skeleton variant="rectangular" width={150}  height={250} />
+    <Grid2 container spacing={2} justifyContent={{ md: "center" }} sx={{ padding: { xs: 1, sm: 4, md: 4 } }}>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
+      <Skeleton animation="wave" variant="rectangular" sx={{height: 400, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 300 }}}/>
     </Grid2>
   );
 }

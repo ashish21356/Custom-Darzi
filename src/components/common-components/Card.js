@@ -9,20 +9,31 @@ export default ({ product }) => {
     return (
         <Fragment>
             <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank">
-                {!loaded && <Skeleton variant="rectangular" width="100%" height={150} />}
-                <CardMedia 
-                    sx={{ height: "auto", objectFit: "cover" }} 
-                    component="img"
-                    height="150"
-                    onLoad={() => setLoaded(true)}
-                    image={BASE_URL + product.media.images[0].original_image_url}
-                    alt={product.name} 
-                />
+                {!loaded ? <Skeleton variant="rectangular" width="100%" height={150}>
+                    <CardMedia
+                        sx={{ height: "auto", objectFit: "cover" }}
+                        component="img"
+                        height="150"
+                        onLoad={() => setLoaded(true)}
+                        image={BASE_URL + product.media.images[0].original_image_url}
+                        alt={product.name}
+                    />
+                </Skeleton> :
+                    <CardMedia
+                        sx={{ height: "auto", objectFit: "cover" }}
+                        component="img"
+                        height="150"
+                        onLoad={() => {
+                            setLoaded(true)
+                        }}
+                        image={BASE_URL + product.media.images[0].original_image_url}
+                        alt={product.name}
+                    />}
             </Link>
             <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
                 <Typography variant="body1">{product.name}</Typography>
                 <Stack direction="row" spacing={0.5}>
-                    {product.sale_price.price && <Typography variant="body2" color="textSecondary" sx={{textDecoration: 'line-through'}}>₹{(product.price) / 1000}</Typography>}
+                    {product.sale_price.price && <Typography variant="body2" color="textSecondary" sx={{ textDecoration: 'line-through' }}>₹{(product.price) / 1000}</Typography>}
                     <Typography variant="body2" color="textSecondary">₹{(product.sale_price.price || product.price) / 1000}</Typography>
                 </Stack>
             </CardContent>
