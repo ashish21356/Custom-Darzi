@@ -1,5 +1,5 @@
 import React, { Fragment, memo, useCallback, useMemo, useState } from "react";
-import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, useMediaQuery } from '@mui/material';
+import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, useMediaQuery, CardActions } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -7,6 +7,8 @@ const BASE_URL = 'https://mmg.whatsapp.net/v/t45.5328-4';
 
 const ProductImage = memo(({ product }) => {
     const [activeStep, setActiveStep] = useState(0);
+    const [loaded, setLoaded] = useState(false);
+
     const images = useMemo(() => product.media.images.map(img => BASE_URL + img.original_image_url), [product]);
 
     const handleNext = useCallback(() => {
@@ -38,12 +40,26 @@ const ProductImage = memo(({ product }) => {
             >
                 <KeyboardArrowLeft />
             </Button>
-            <CardMedia
-                component="img"
-                image={images[activeStep]}
-                alt={`Product Image ${activeStep + 1}`}
-                sx={{ height: "120", }}
-            />
+            {
+                !loaded ?
+                    <Skeleton variant="rectangular" width="100%" height={150}>
+                        <CardMedia
+                            sx={{ height: "auto", objectFit: "cover" }}
+                            component="img"
+                            height="150"
+                            onLoad={() => setLoaded(true)}
+                            image={BASE_URL + product.media.images[0].original_image_url}
+                            alt={product.name}
+                        />
+                    </Skeleton> :
+                    <CardMedia
+                        component="img"
+                        image={images[activeStep]}
+                        alt={`Product Image ${activeStep + 1}`}
+                        sx={{ height: "120", }}
+                        onLoad={() => setLoaded(true)}
+                    />
+            }
             <Button
                 size="small"
                 sx={{
@@ -79,23 +95,10 @@ const ProductImage = memo(({ product }) => {
 });
 
 export default ({ product }) => {
-    const [loaded, setLoaded] = useState(false);
-
     return (
         <Fragment>
             {/* <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank"> */}
-            {!loaded ? <Skeleton variant="rectangular" width="100%" height={150}>
-                <CardMedia
-                    sx={{ height: "auto", objectFit: "cover" }}
-                    component="img"
-                    height="150"
-                    onLoad={() => setLoaded(true)}
-                    image={BASE_URL + product.media.images[0].original_image_url}
-                    alt={product.name}
-                />
-            </Skeleton> :
-                <ProductImage product={product} />}
-            {/* </Link> */}
+            <ProductImage product={product} />
             <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
                 <Typography variant="body1">{product.name}</Typography>
                 <Stack direction="row" spacing={0.5}>
@@ -103,9 +106,11 @@ export default ({ product }) => {
                     <Typography variant="body2" color="textSecondary">₹{(product.sale_price.price || product.price) / 1000}</Typography>
                 </Stack>
             </CardContent>
-            {/* <CardActions sx={{textAlign: 'center', justifyContent: 'center'}}>
-                <Button variant="contained" sx={{ mt: 1, backgroundColor: "black", color: "white" }}>Buy Now</Button>
-            </CardActions> */}
+            <CardActions sx={{ textAlign: 'center', justifyContent: 'center' }}>
+                <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank">
+                    <Button variant="contained" sx={{ mt: 1, backgroundColor: "black", color: "white" }}>Enquire now</Button>
+                </Link>
+            </CardActions>
         </Fragment>
 
     );
