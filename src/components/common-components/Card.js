@@ -22,8 +22,8 @@ const ProductImage = memo(({ product }) => {
     return (
         <Box sx={{ width: "100%", position: "relative" }}>
             {/* Image Display */}
-            <Button 
-                size="small" 
+            <Button
+                size="small"
                 sx={{
                     position: "absolute",
                     left: 0,
@@ -35,7 +35,7 @@ const ProductImage = memo(({ product }) => {
                     background: "rgba(0, 0, 0, 0.5)",
                     color: "white",
                     "&:hover": { background: "rgba(0, 0, 0, 0.8)" },
-                  }}
+                }}
                 onClick={handleBack}
             >
                 <KeyboardArrowLeft />
@@ -56,7 +56,12 @@ const ProductImage = memo(({ product }) => {
                         component="img"
                         image={images[activeStep]}
                         alt={`Product Image ${activeStep + 1}`}
-                        sx={{ height: "120", }}
+                        sx={{
+                            height: "250px", // Fixed height
+                            width: "100%",
+                            objectFit: "contain", // Ensures image scales without distortion
+                            backgroundColor: "#f5f5f5", // Adds a background to fill empty spaces
+                        }}
                         onLoad={() => setLoaded(true)}
                     />
             }
@@ -73,7 +78,7 @@ const ProductImage = memo(({ product }) => {
                     background: "rgba(0, 0, 0, 0.5)",
                     color: "white",
                     "&:hover": { background: "rgba(0, 0, 0, 0.8)" },
-                  }}
+                }}
                 onClick={handleNext}
             >
                 <KeyboardArrowRight />
