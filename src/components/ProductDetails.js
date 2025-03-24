@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import {
     Card,
@@ -123,7 +123,6 @@ const ProductDetails = () => {
                             <Divider />
                             {
                                 selectedProduct.details ?
-
                                     <Accordion sx={{ boxShadow: "none", background: "none", "&:before": { display: "none" } }}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                             <Typography variant="body2" fontWeight="bold">Product Specification</Typography>

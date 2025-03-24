@@ -1,5 +1,5 @@
 import React, { Fragment, memo, useCallback, useMemo, useState } from "react";
-import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, useMediaQuery, CardActions } from '@mui/material';
+import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, CardActions } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 

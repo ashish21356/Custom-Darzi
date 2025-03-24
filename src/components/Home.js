@@ -1,4 +1,4 @@
-import React, { lazy, useRef } from "react";
+import React, { useRef } from "react";
 import {useNavigate} from 'react-router-dom';
 import { Box, Typography, Grid2 as Grid, Card, CardMedia, Container, IconButton } from "@mui/material";
 import Slider from "react-slick";
