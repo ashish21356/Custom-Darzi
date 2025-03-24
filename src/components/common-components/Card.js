@@ -1,71 +1,72 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, memo, useCallback, useMemo, useState } from "react";
 import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, useMediaQuery } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const BASE_URL = 'https://mmg.whatsapp.net/v/t45.5328-4';
 
-const ProductImage = ({ product }) => {
+const ProductImage = memo(({ product }) => {
     const [activeStep, setActiveStep] = useState(0);
-    const images = product.media.images.map(img => BASE_URL + img.original_image_url);
+    const images = useMemo(() => product.media.images.map(img => BASE_URL + img.original_image_url), [product]);
 
-    const isDesktop = useMediaQuery("(min-width:600px)");
-
-    // Swipe handling
-    let touchStartX = 0;
-
-    const handleTouchStart = (e) => {
-        touchStartX = e.touches[0].clientX;
-    };
-
-    const handleTouchMove = (e) => {
-        const touchEndX = e.touches[0].clientX;
-        const difference = touchStartX - touchEndX;
-
-        if (difference > 50) {
-            handleNext(); // Swipe left
-        } else if (difference < -50) {
-            handleBack(); // Swipe right
-        }
-    };
-
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         setActiveStep((prevStep) => (prevStep < images.length - 1 ? prevStep + 1 : 0));
-    };
+    }, []);
 
-    const handleBack = () => {
+    const handleBack = useCallback(() => {
         setActiveStep((prevStep) => (prevStep > 0 ? prevStep - 1 : images.length - 1));
-    };
+    }, []);
 
     return (
         <Box sx={{ width: "100%", position: "relative" }}>
             {/* Image Display */}
+            <Button 
+                size="small" 
+                sx={{
+                    position: "absolute",
+                    left: 0,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    zIndex: 10,
+                    minWidth: "32px",
+                    padding: "4px",
+                    background: "rgba(0, 0, 0, 0.5)",
+                    color: "white",
+                    "&:hover": { background: "rgba(0, 0, 0, 0.8)" },
+                  }}
+                onClick={handleBack}
+            >
+                <KeyboardArrowLeft />
+            </Button>
             <CardMedia
                 component="img"
                 image={images[activeStep]}
                 alt={`Product Image ${activeStep + 1}`}
                 sx={{ height: "120", }}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-            //   sx={{ width: "100%", height: "150px", objectFit: "cover" }}
             />
+            <Button
+                size="small"
+                sx={{
+                    position: "absolute",
+                    right: 0,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    zIndex: 10,
+                    minWidth: "32px",
+                    padding: "4px",
+                    background: "rgba(0, 0, 0, 0.5)",
+                    color: "white",
+                    "&:hover": { background: "rgba(0, 0, 0, 0.8)" },
+                  }}
+                onClick={handleNext}
+            >
+                <KeyboardArrowRight />
+            </Button>
 
-            {/* Navigation Buttons */}
             <MobileStepper
                 steps={images.length}
                 position="static"
                 activeStep={activeStep}
-                  nextButton={
-                    isDesktop &&
-                    <Button size="small" onClick={handleNext}>
-                      <KeyboardArrowRight />
-                    </Button>
-                  }
-                  backButton={ isDesktop &&
-                    <Button size="small" onClick={handleBack}>
-                      <KeyboardArrowLeft />
-                    </Button>
-                  }
                 sx={{
                     background: "transparent",
                     justifyContent: "center",
@@ -75,7 +76,7 @@ const ProductImage = ({ product }) => {
             />
         </Box>
     );
-};
+});
 
 export default ({ product }) => {
     const [loaded, setLoaded] = useState(false);
