@@ -7,9 +7,6 @@ import ProductCard from "./common-components/Card";
 
 const Body = () => {
     return (
-
-
-
         <Grid container spacing={2} justifyContent={{ md: "center" }} sx={{ padding: { xs: 1, sm: 3 } }}>
           
             {products.map((product) => (
@@ -19,8 +16,7 @@ const Body = () => {
                     </Card>
                 </Grid>
             ))}
-        </Grid>
-               
+        </Grid>   
     );
 };
 
