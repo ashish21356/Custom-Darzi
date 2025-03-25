@@ -1,8 +1,7 @@
 import React, { Fragment, memo, useCallback, useEffect, useMemo, useState } from "react";
-import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, CardActions, Tooltip } from '@mui/material';
+import { Box, MobileStepper, Button, CardMedia, CardContent, Typography, Stack, Skeleton, CardActions, Tooltip, Card } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-
 const BASE_URL = 'https://mmg.whatsapp.net/v/t45.5328-4';
 
 const ProductImage = memo(({ product }) => {
@@ -100,32 +99,29 @@ const ProductImage = memo(({ product }) => {
     );
 });
 
-export default ({ product }) => {
+const CardV2 = ({product}) => {
     return (
-        <Fragment>
-            <ProductImage key={product.id} product={product} />
-            <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between", textAlign: 'left' }}>
+        <Card sx={{
+            maxWidth: '250',
+            boxShadow: "none",
+            // border: '1px solid black'
+        }}>
+            <CardContent>
+                <ProductImage product={product} />
                 <Tooltip title={product.name}>
-                    <Typography  variant="body1" sx={{
+                    <Typography variant="body1" textTransform="uppercase" sx={{
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
+                        fontWeight: "bold",
                         maxWidth: "200px" // Adjust width as needed
                     }}>
                         {product.name}
                     </Typography>
                 </Tooltip>
-                <Stack direction="row" spacing={0.5}>
-                    {product.sale_price.price && <Typography variant="body2" color="textSecondary" sx={{ textDecoration: 'line-through' }}>₹{(product.price) / 1000}</Typography>}
-                    <Typography variant="body2" color="textSecondary">₹{(product.sale_price.price || product.price) / 1000}</Typography>
-                </Stack>
             </CardContent>
-            <CardActions sx={{ textAlign: 'center', justifyContent: 'center' }}>
-                <Link to={`https://wa.me/p/${product.id}/917047626500`} target="_blank">
-                    <Button variant="contained" sx={{ mt: 1, backgroundColor: "black", color: "white" }}>Enquire now</Button>
-                </Link>
-            </CardActions>
-        </Fragment>
-
+        </Card>
     );
 }
+
+export default CardV2;

@@ -5,6 +5,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import products from "../components/product.metadata.json";
 import ProductCard from "./common-components/Card";
+import CardV2 from "./common-components/CardV2";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -110,10 +111,11 @@ const TopSelling = () => {
                     "&::-webkit-scrollbar": { display: "none" },
                 }}>
                     {topSelling.filter(prod => prod).map((product) => (
+                        // <CardV2 key={product.id} product={product} />
                         <Card key={product.id} sx={{
                             flex: "0 0 auto",
                             textAlign: "center",
-                            boxShadow: 3,
+                            // boxShadow: 3,
                             width: 200,
                         }}>
                             <ProductCard key={product.id} product={product} />

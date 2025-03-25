@@ -39,7 +39,7 @@ const Footer = () => {
                 {/* Copyright */}
                 <Box sx={{ textAlign: "center", marginTop: 3 }}>
                     <Typography variant="body2" color="textSecondary">
-                        &copy; {new Date().getFullYear()} KurtaShop. All rights reserved.
+                        &copy; 2025 KurtaShop. All rights reserved.
                     </Typography>
                 </Box>
             </Container>

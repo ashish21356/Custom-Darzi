@@ -31,12 +31,13 @@ const Body = () => {
                 <Breadcrumbs>
                     <Typography><Link style={{ textDecoration: "none", color: "inherit" }} underline="none" color="inherit" to={'/'}>Home</Link></Typography>
                     <Typography sx={{ color: "text.primary" }}>Shop</Typography>
+                    <Typography>{search?.split('=')?.[1]}</Typography>
                 </Breadcrumbs>
             </Grid>
             <Grid container spacing={2} justifyContent={{ md: "center" }}>
                 {localProds.map((product) => (
                     <Grid item key={product.id} xs={6} sm={6} md={2}>
-                        <Card className="body-card" sx={{ height: "100%", textAlign: "center", display: "flex", flexDirection: "column", boxShadow: 3, minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 220 }, margin: "auto" }}>
+                        <Card className="" sx={{ height: "100%", textAlign: "center", display: "flex", flexDirection: "column", minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 220 }, margin: "auto" }}>
                             <ProductCard key={product.id} product={product} />
                         </Card>
                     </Grid>
