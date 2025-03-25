@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import {
     Card,
     CardContent,
@@ -54,7 +54,7 @@ const ProductDetails = () => {
                 <Grid container spacing={4}>
                     {/* Left Side - Image Carousel */}
                     <Grid item xs={12} md={6}>
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                             {selectedProduct?.media?.images.length > 0 ? (
                                 selectedProduct?.media?.images.map((img, index) => (
                                     <Card key={index} sx={{ borderRadius: 2 }}>
@@ -71,7 +71,7 @@ const ProductDetails = () => {
                             ) : (
                                 <Typography variant="body1">No Images Available</Typography>
                             )}
-                        </Slider>
+                        </Slider> */}
                     </Grid>
 
                     {/* Right Side - Product Details */}

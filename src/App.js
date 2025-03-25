@@ -2,8 +2,6 @@ import React, { Fragment, lazy, Suspense, useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Box, Grid2, Skeleton } from '@mui/material';
 
 const Body = lazy(() => import('./components/Body'));

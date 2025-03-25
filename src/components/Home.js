@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {useNavigate} from 'react-router-dom';
-import { Box, Typography, Grid2 as Grid, Card, CardMedia, Container, IconButton } from "@mui/material";
-import Slider from "react-slick";
+import { Box, Typography, Card, CardMedia, Container, IconButton, MobileStepper } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import products from "../components/product.metadata.json";
@@ -9,15 +8,16 @@ import ProductCard from "./common-components/Card";
 
 const Home = () => {
     const navigate = useNavigate();
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-    };
+    const [activeStep, setActiveStep] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveStep(prevStep => prevStep >= BannerImages.length - 1 ? 0 : prevStep + 1);
+        }, 3000);
+
+        return () => {
+            clearInterval(interval);
+        }
+    }, []);
 
     const categories = [
         { name: "Shirts", type: "shirt", image: 'https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180' },
@@ -26,19 +26,35 @@ const Home = () => {
         // { name: "Accessories", image: "https://tse4.mm.bing.net/th?id=OIP.MFsqir6hdKfytY8g3OdyhwHaLZ&pid=Api&P=0&h=180" }
     ];
 
+    const BannerImages = ['https://s6.imgcdn.dev/YjUBKg.jpg', 'https://s6.imgcdn.dev/YjU7hn.jpg'];
+
     return (
         <Container maxWidth="md" sx={{ overflowX: "hidden", marginTop: "64px" }}>
             {/* Banner Slider */}
-            <Box sx={{ width: "100%", maxWidth: 900, mx: "auto", overflow: "hidden" }}>
-                <Slider {...sliderSettings}>
-                    <Box sx={{ height: 200, backgroundColor: "#f8f8f8", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <Typography variant="h4" fontWeight="bold">Exclusive Kurta Collection!</Typography>
-                    </Box>
-                    <Box sx={{ height: 200, backgroundColor: "#e0e0e0", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <Typography variant="h4" fontWeight="bold">Festive Sale - Flat 30% Off!</Typography>
-                    </Box>
-                </Slider>
+            <Box sx={{ width: "100%", mx: "auto", overflow: "hidden" }}>
+                <Box sx={{ backgroundColor: "#f8f8f8", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <CardMedia component="img" image={BannerImages[activeStep]} alt={"banner Image"} sx={{ opacity: '1', width: "100%", height: "100%" }} />
+                </Box>
             </Box>
+            <MobileStepper
+                steps={BannerImages.length}
+                position="static"
+                activeStep={activeStep}
+                color="black"
+                sx={{
+                    background: "transparent",
+                    color: 'black',
+                    justifyContent: "center",
+                    padding: "8px",
+                    mt: 1,
+                    '& .MuiMobileStepper-dot': {
+                        backgroundColor: 'darkgray',
+                    },
+                    '& .MuiMobileStepper-dotActive': {
+                        backgroundColor: 'black',
+                    },
+                }}
+            />
 
 
             {/* Categories Section */}
@@ -93,7 +109,7 @@ const TopSelling = () => {
                     scrollbarWidth: "none",
                     "&::-webkit-scrollbar": { display: "none" },
                 }}>
-                    {topSelling.map((product) => (
+                    {topSelling.filter(prod => prod).map((product) => (
                         <Card key={product.id} sx={{
                             flex: "0 0 auto",
                             textAlign: "center",

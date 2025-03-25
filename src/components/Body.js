@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const Body = () => {
     const { search } = useLocation();
-    console.log(search.split('=')[1]);
     const [localProds, setLocalProds] = useState([]);
 
     useEffect(() => {
