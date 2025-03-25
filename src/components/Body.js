@@ -34,10 +34,20 @@ const Body = () => {
                     <Typography>{search?.split('=')?.[1]}</Typography>
                 </Breadcrumbs>
             </Grid>
-            <Grid container spacing={2} justifyContent={{ md: "center" }}>
+            <Grid container spacing={2} justifyContent="center">
                 {localProds.map((product) => (
-                    <Grid item key={product.id} xs={6} sm={6} md={2}>
-                        <Card className="" sx={{ height: "100%", textAlign: "center", display: "flex", flexDirection: "column", minWidth: { xs: 180, sm: 250, md: 220 }, maxWidth: { xs: 180, sm: 250, md: 220 }, margin: "auto" }}>
+                    <Grid item key={product.id} xs={6} sm={6} md={3}>
+                        <Card
+                            sx={{
+                                height: "100%",
+                                textAlign: "center",
+                                display: "flex",
+                                flexDirection: "column",
+                                minWidth: { xs: 160, sm: 200, md: 220 }, // Adjusted for better responsiveness
+                                maxWidth: { xs: 160, sm: 200, md: 220 }, // Ensures proper fit
+                                margin: "auto"
+                            }}
+                        >
                             <ProductCard key={product.id} product={product} />
                         </Card>
                     </Grid>
